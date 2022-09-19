@@ -5,14 +5,82 @@
     box-sizing: border-box;
 }
 
-/* VARIABLES */
-:root{
-    --main-color:
+@font-face {
+    font-family: light;
+    src: url(/font/WTGothic-Light.woff2);
+
 }
 
-main{
+@font-face {
+    font-family: regular;
+    src: url(/font/WTGothic-Regular.woff2);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(/font/WTGothic-Medium.woff2);
+}
+
+@font-face {
+    font-family: semibold;
+    src: url(/font/WTGothic-Semi-Bold.woff2);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(/font/WTGothic-Bold.woff2);
+}
+
+/* VARIABLES */
+:root{
+    --white: #EFEFEF;
+    --black: #000000;
 }
 
 .section{
-    border: solid 1px darkcyan;
-}   
+     background-color: var(--white);
+} 
+
+.proj-section:nth-child(1){
+    background-color: violet;
+}
+ nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    font-size: 1.5rem;
+    font-family: semibold;
+ }
+
+#icons{
+    position: fixed;
+    color: #565656;
+    z-index: 999;
+    right: 9vw;
+    top: 50%;
+    display: grid;
+    row-gap: 2.25rem;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-family: medium;
+}
+#icons li{
+    list-style: none;
+}
+
+  #icons li.active {
+    transition: transform 0.1s;
+    color: var(--black);
+    transition-timing-function: ease-in-out;
+    transform: scale(1.2, 1.2);
+    font-kerning: auto;
+  }
+
+
+@media only screen and (max-width: 319px) {
+    :root{display: none;}
+}
+
