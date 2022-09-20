@@ -74,7 +74,7 @@ section h1:nth-child(2){
 
 section h1:nth-child(3){
     top: 320px;
-    left:500px;
+    left:600px;
     color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
@@ -85,7 +85,7 @@ section h1:nth-child(3){
 
 section h1:nth-child(4){
     top: 320px;
-    left:500px;
+    left:600px;
     z-index: 0;
     
 }
@@ -253,7 +253,11 @@ footer a::before{
     clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
 }
 
-footer a:hover::before{
+footer a:nth-child(even){
+    cursor:default;
+}
+
+footer a:nth-child(odd):hover::before{
      transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
     clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
 }
