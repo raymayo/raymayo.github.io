@@ -1,5 +1,5 @@
 /* GLOBAL */
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -32,29 +32,76 @@
 }
 
 /* VARIABLES */
-:root{
+:root {
     --white: #EFEFEF;
     --black: #000000;
 }
 
-.section{
-     background-color: var(--white);
-} 
-
-.proj-section:nth-child(1){
-    background-color: violet;
+.section {
+    background-color: var(--white);
 }
- nav{
+
+
+nav{
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
 
-    font-size: 1.5rem;
-    font-family: semibold;
- }
+    width: 100vw;
+    display: flex;
 
-#icons{
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10% 0 10%;
+    /* border: solid red; */
+    margin-top: 3.5rem;
+}
+/* 
+nav *{
+    border: solid yellow;
+} */
+
+#logo-box {
+    display: flex;
+    align-items: center;
+}
+
+#logo-box a{
+    padding-left: 0.5rem;
+    font-family: medium;
+    line-height: 20px;
+}
+
+a {
+    font-size: 1.5rem;
+    font-family: medium;
+    text-decoration: none;
+    color: var(--black);
+}
+
+#nav-links a:nth-child(3){
+    margin-left: 2em;
+}
+#nav-links a:nth-child(2){
+    margin-left: 2em;
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10% 0 10%;
+    margin-bottom: 3.5rem;
+}
+
+#icons {
     position: fixed;
     color: #565656;
     z-index: 999;
@@ -67,20 +114,135 @@
     cursor: pointer;
     font-family: medium;
 }
-#icons li{
+
+#icons li {
     list-style: none;
 }
 
-  #icons li.active {
+#icons li.active {
+    font-family: semibold;
     transition: transform 0.1s;
     color: var(--black);
     transition-timing-function: ease-in-out;
-    transform: scale(1.2, 1.2);
+    transform: scale(1.3, 1.3);
     font-kerning: auto;
-  }
+}
+
+.img-container{
+    width: 750px;
+    height: 450px;
+    background-color: salmon;
+}
+
+
+
+
+#nav-links a{
+    position: relative;
+    white-space: nowrap;
+}
+
+#nav-links a::before{
+    transform-origin: 50% 100%;
+    transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+}
+
+#nav-links a:hover::before{
+     transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+    clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+}
+
+#nav-links a span{
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+
+#nav-links a::before,
+#nav-links a::after {
+    position: absolute;
+    width: 100%;
+    height: .6px;
+    background: currentColor;
+    top: 100%;
+    left: 0;
+    pointer-events: none;
+}
+
+#nav-links a::before {
+    content: '';
+    /* show by default */
+}
+
+#nav-links a:hover span {
+    transform: translate3d(0, -2px, 0);
+}
+
+
+
+
+
+
+
+
+
+footer a{
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+footer a::before{
+    transform-origin: 50% 100%;
+    transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+}
+
+footer a:hover::before{
+     transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+    clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+}
+
+footer a span{
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+
+footer a::before,
+footer a::after {
+    position: absolute;
+    width: 100%;
+    height: .6px;
+    background: currentColor;
+    top: 100%;
+    left: 0;
+    pointer-events: none;
+}
+
+footer a::before {
+    content: '';
+    /* show by default */
+}
+
+footer a:hover span {
+    transform: translate3d(0, -2px, 0);
+}
 
 
 @media only screen and (max-width: 319px) {
-    :root{display: none;}
+    :root {
+        display: none;
+    }
 }
 
+@media only screen and (max-width: 900px){
+#nav-links{
+    display: none;
+}
+
+footer a:nth-child(2){
+    display: none;
+}
+}
