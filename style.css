@@ -62,7 +62,7 @@ section h1{
 }
 section h1:nth-child(1){
     top: 20vh;
-    left:20vh;
+    left:25vh;
     color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--white);
@@ -71,7 +71,7 @@ section h1:nth-child(1){
 
 section h1:nth-child(2){
     top: 20vh;
-    left:20vh;
+    left:25vh;
     z-index: 0;
 
     
