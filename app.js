@@ -4,11 +4,17 @@ new fullpage('#fullpage', {
     scrollHorizontally: false,
 
     onLeave: function (origin, destination, direction) {
+        gsap.timeline({ delay: 0.5 }).fromTo('.reveal', 0.5, { opacity: 0 }, { opacity: 1 })
+
         activateNavItem($('#icons').find('li').eq(destination.index));
     },
+
+
     afterRender: function () {
         activateNavItem($('#icons').find('li').eq($('.section.active').index()))
     }
+
+
 });
 
 $('.navIcon').click(function () {
@@ -19,6 +25,8 @@ $('.navIcon').click(function () {
 function activateNavItem(item) {
     item.addClass('active').siblings().removeClass('active');
 }
+
+
 
 //PRELOADER
 // window.addEventListener('load', ()=>{
@@ -36,7 +44,10 @@ function parallax(e) {
         const x = (window.innerWidth - e.pageX * speed)/100
         const y = (window.innerHeight - e.pageY * speed)/100
 
-        layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+        
+        
+        layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+
     })
 }
 
@@ -49,8 +60,22 @@ function parallax(e) {
 
         let page = document.getElementById('fullpage');
 
-        page.children[0].children[4].style.backgroundImage = `url(${images.projOne.image})`
-        page.children[1].children[4].style.backgroundImage = `url(${images.projTwo.image})`
+        page.children[0].children[0].style.backgroundImage = `url(${images.projOne.image})`
+        page.children[1].children[0].style.backgroundImage = `url(${images.projTwo.image})`
+
+
+
+
+        // const ui = gsap.timeline({delay:0.5})
+
+        // ui
+        gsap.from('nav', .6, {delay:0.3, opacity: 0, y: '-100', ease: "expo.out" })
+        gsap.fromTo('.stag', .6, {delay:0.35, opacity: 0, y: '100', ease: "expo.out" }, {delay:0.35, opacity: 1, y: '0', ease: "expo.out" })
+        gsap.fromTo('.img-container', 0.6, {delay:0.5, opacity: 0, ease: "expo.out", scaleX: 0, scaleY: 0 }, {delay:0.55, opacity: 1, ease: "expo.out", scaleX: 1, scaleY: 1 })
+        gsap.fromTo('.left', 0.6, { delay:0.7, opacity: 0, ease: "expo.out" ,x:'-100'}, { delay:0.7, opacity: 1, ease: "expo.out", x:'0' })
+        gsap.fromTo('.right', 0.6, { delay:0.7, opacity: 0, ease: "expo.out" ,x:'100'}, { delay:0.7, opacity: 1, ease: "expo.out", x:'0' })
+        gsap.fromTo('.behance-circle', 0.6, { delay:0.75, opacity: 0, ease: "expo.out" ,scaleX: 0, scaleY: 0}, { delay:0.75, opacity: 1, ease: "expo.out", scaleX: 1, scaleY: 1 })
+        gsap.fromTo('.desc', .6, {delay:0.9, opacity: 0, y: '100', ease: "expo.out" }, {delay:0.9, opacity: 1, y: '0', ease: "expo.out" });
 
 
     
