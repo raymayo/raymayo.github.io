@@ -8,28 +8,28 @@
 
 @font-face {
     font-family: light;
-    src: url(/font/WTGothic-Light.woff2);
+    src: url(./font/WTGothic-Light.woff2);
 
 }
 
 @font-face {
     font-family: regular;
-    src: url(/font/WTGothic-Regular.woff2);
+    src: url(./font/WTGothic-Regular.woff2);
 }
 
 @font-face {
     font-family: medium;
-    src: url(/font/WTGothic-Medium.woff2);
+    src: url(./font/WTGothic-Medium.woff2);
 }
 
 @font-face {
     font-family: semibold;
-    src: url(/font/WTGothic-Semi-Bold.woff2);
+    src: url(./font/WTGothic-Semi-Bold.woff2);
 }
 
 @font-face {
     font-family: bold;
-    src: url(/font/WTGothic-Bold.woff2);
+    src: url(./font/WTGothic-Bold.woff2);
 }
 
 /* VARIABLES */
