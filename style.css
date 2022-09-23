@@ -110,8 +110,8 @@ section{
     top:8%;
     right: 8%;
     border: rgba(0, 0, 0, 0.55) calc(.1vw - .1vh) solid;
-    width:  calc(7vh + 7vw);
-    height: calc(7vh + 7vw);
+    width:  calc(5.5vh + 5.5vw);
+    height: calc(5.5vh + 5.5vw);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -123,7 +123,7 @@ section{
 
 
 .behance-circle a{
-    font-size: calc(1vw + 1vh);
+    font-size: calc(.8vw + .8vh);
     color: var(--black);
 }
 
@@ -137,11 +137,15 @@ h2{
     line-height: 1.5;
 }
 
+/* .img-container > *{
+    opacity: 0;
+} */
+
 
 
 
 nav{
-    backdrop-filter: blur(200px) saturate(100%);
+    backdrop-filter: blur(30px) saturate(100%);
   -webkit-backdrop-filter: blur(200px) saturate(100%);
     position: fixed;
     top: 0;
@@ -151,8 +155,8 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(1.3vw + 1.3vw) 10% calc(1.3vw + 1.3vw) 10%;
-    border-bottom: solid calc(.1vw + .1vh) rgba(0, 0, 0, 0.2);
+    padding: calc(1.35vw + 1.35vh) 10% calc(1.35vw + 1.35vh) 10%;
+    border-bottom: solid calc(.05vw + .05vh) rgba(0, 0, 0, 0.2);
 }
 
 
@@ -167,12 +171,12 @@ nav{
 }
 
 #logo-box img{
-width: calc(2vw + 2vh);
+width: calc(1.43vw + 1.43vh);
 height: auto;
 }
 
 a {
-    font-size: calc(.8vw + .8vh);
+    font-size: calc(.7vw + .7vh);
     font-family: medium;
     text-decoration: none;
     color: var(--black);
@@ -212,9 +216,9 @@ footer{
     top: 50%;
     display: block;
     display: grid;
-    row-gap: calc(1.5vw + 1.5vh);
+    row-gap: calc(1vw + 1vh);
     transform: translate(-50%, -50%);
-    font-size: calc(.8vw + .8vh);
+    font-size: calc(.7vw + .7vh);
     cursor: pointer;
     font-family: medium;
 }
@@ -264,7 +268,7 @@ footer{
 #nav-links a::after {
     position: absolute;
     width: 100%;
-    height: calc(.028vw + .028vh);
+    height: calc(.02vw + .02vh);
     background: currentColor;
     top: 100%;
     left: 0;
@@ -319,7 +323,7 @@ footer a::before,
 footer a::after {
     position: absolute;
     width: 100%;
-    height: calc(.028vw + .028vh);
+    height: calc(.02vw + .02vh);
     background: currentColor;
     top: 100%;
     left: 0;

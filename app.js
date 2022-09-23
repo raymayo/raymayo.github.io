@@ -4,13 +4,40 @@ new fullpage('#fullpage', {
     scrollHorizontally: false,
 
     onLeave: function (origin, destination, direction) {
-        gsap.timeline({ delay: 0.5 }).fromTo('.reveal', 0.5, { opacity: 0 }, { opacity: 1 })
 
         activateNavItem($('#icons').find('li').eq(destination.index));
+
+        let tl = new TimelineMax({
+            onStart: function () { fullpage_api.setAllowScrolling(false) },
+            onComplete: function () { fullpage_api.setAllowScrolling(true) },
+        });
+
+        tl.fromTo('.reveal-left' , 0.6, { delay: 0.6, opacity: 0, ease: "expo.out", x: '-100' }, { delay: 0.6, opacity: 1, ease: "expo.out", x: '0'})
+        tl.fromTo('.reveal-right', 0.6, { opacity: 0, ease: "expo.out", x: '100' }, { opacity: 1, ease: "expo.out", x: '0' }, '<')
+        tl.fromTo('.behance-circle', 0.6, {opacity: 0, ease: "expo.out", scaleX: 0, scaleY: 0 }, {opacity: 1, ease: "expo.out", scaleX: 1, scaleY: 1 }, '<')
+        tl.fromTo('.desc', .6, {opacity: 0, y: '100', ease: "expo.out" }, {opacity: 1, y: '0', ease: "expo.out" }, '<');
+       
+        
+
     },
 
+    // afterLoad: function (origin, destination, direction) {
+    //     if (destination.index === 0) {
+    //         console.log("page one")
+    //     } else if (destination.index === 1) {
+    //         console.log("page two")
 
-    afterRender: function () {
+    //     } else if (destination.index === 2) {
+    //         console.log("page three")
+
+    //     } else {
+    //         console.log("page four")
+
+    //     }
+    // },
+
+
+    afterRender: function (origin, destination, direction) {
         activateNavItem($('#icons').find('li').eq($('.section.active').index()))
     }
 
@@ -36,20 +63,20 @@ function activateNavItem(item) {
 
 
 //PARALLAX EFFECT
-document.addEventListener("mousemove", parallax);
+// document.addEventListener("mousemove", parallax);
 
-function parallax(e) {
-    this.querySelectorAll('.layer').forEach(layer => {
-        const speed = layer.getAttribute('data-speed');
-        const x = (window.innerWidth - e.pageX * speed)/100
-        const y = (window.innerHeight - e.pageY * speed)/100
+// function parallax(e) {
+//     this.querySelectorAll('.layer').forEach(layer => {
+//         const speed = layer.getAttribute('data-speed');
+//         const x = (window.innerWidth - e.pageX * speed)/100
+//         const y = (window.innerHeight - e.pageY * speed)/100
 
         
         
-        layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+//         layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
 
-    })
-}
+//     })
+// }
 
 
 
