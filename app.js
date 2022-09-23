@@ -82,13 +82,17 @@ function activateNavItem(item) {
 
         const images = {
             projOne: { image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
-            projTwo: { image: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" }
+            projTwo: { image: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" },
+            projThree: { image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
+            projFour: { image: "https://images.unsplash.com/photo-1611930021592-a8cfd5319ceb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" }
         }
 
         let page = document.getElementById('fullpage');
 
         page.children[0].children[0].style.backgroundImage = `url(${images.projOne.image})`
         page.children[1].children[0].style.backgroundImage = `url(${images.projTwo.image})`
+        page.children[2].children[0].style.backgroundImage = `url(${images.projThree.image})`
+        page.children[3].children[0].style.backgroundImage = `url(${images.projFour.image})`
 
 
 
@@ -105,7 +109,32 @@ function activateNavItem(item) {
         gsap.fromTo('.desc', .6, {delay:0.8, opacity: 0, y: '100', ease: "expo.out" }, {delay:0.8, opacity: 1, y: '0', ease: "expo.out" });
 
 
-    
+        var i = 'OFF'
+
+
+        let burger =  document.getElementById('burger').addEventListener('click', () => {
+            if (i == "OFF") {
+                i = "ON";
+                document.querySelector('#burger').classList.remove("fa-bars");
+                document.querySelector('#burger').classList.add("fa-xmark");
+                
+                gsap.to('nav', .1, { paddingBottom: '100vh', ease: Expo.easeOut })
+                gsap.to('nav', 1, { backdropFilter: 'blur(10px)', ease: Expo.easeOut })
+                gsap.to('#burger-box', 1, {delay:.6, display: 'grid', ease: Expo.easeOut })
+                gsap.to('.burger-links', 1, { delay: .6, opacity: 0.8, ease: Expo.easeOut, stagger: 0.1 })
+            }
+
+            else if (i == "ON") {
+                document.querySelector('#burger').classList.remove("fa-xmark");
+                document.querySelector('#burger').classList.add("fa-bars");
+                i = "OFF";
+                gsap.to('.burger-links', .8, {opacity: 0, ease: Expo.easeOut, stagger: 0.1 })
+                gsap.to('#burger-box', .5, { display: 'none', ease: Expo.easeOut })
+                gsap.to('nav', 1, { backdropFilter: 'blur(0px)', ease: Expo.easeOut })
+                gsap.to('nav', .1, { delay: 1, paddingBottom: 'calc(1.35vw + 1.35vh)', ease: Expo.easeOut })
+
+            }
+        })
 
 
 

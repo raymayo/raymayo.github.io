@@ -105,11 +105,11 @@ section{
 
 
 .behance-circle{
-    z-index: 999;
+    z-index: 1;
     position: absolute;
     top:8%;
     right: 8%;
-    border: rgba(0, 0, 0, 0.55) calc(.1vw - .1vh) solid;
+    border: rgba(0, 0, 0, 0.55) calc(.3vw - .3vh) solid;
     width:  calc(5.5vh + 5.5vw);
     height: calc(5.5vh + 5.5vw);
     text-align: center;
@@ -145,24 +145,25 @@ h2{
 
 
 nav{
-    backdrop-filter: blur(30px) saturate(100%);
-  -webkit-backdrop-filter: blur(200px) saturate(100%);
+    backdrop-filter: blur(10px) saturate(100%);
+    -webkit-backdrop-filter: blur(10px) saturate(100%);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 999;
     width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: calc(1.35vw + 1.35vh) 10% calc(1.35vw + 1.35vh) 10%;
-    border-bottom: solid calc(.05vw + .05vh) rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
 
 #logo-box {
     display: flex;
     align-items: center;
+    opacity: 0.8;
 }
 
 #logo-box a{
@@ -197,8 +198,8 @@ display: flex;
 footer{
     position: fixed;
     bottom: 0;
-    left: 0;
-    z-index: 999;
+    right: 0;
+    z-index: 1;
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -211,7 +212,7 @@ footer{
 #icons {
     position: fixed;
     color: rgba(0,0,0,0.6);
-    z-index: 999;
+    z-index: 1;
     right: 9vw;
     top: 50%;
     display: block;
@@ -339,15 +340,20 @@ footer a:hover span {
     transform: translate3d(0, -2px, 0);
 }
 
+    #burger-con{
+        cursor: pointer;
+        display:none;
+    }
 
 
 
 
-@media only screen and (max-width: 319px) {
+
+/* @media only screen and (max-width: 319px) {
     :root {
         display: none;
     }
-}
+} */
 
 
 
@@ -357,8 +363,12 @@ footer a:hover span {
     display: none;
     }
     
-    footer a:nth-child(2){
+    /* footer a:nth-child(2){
     display: none;
+    } */
+
+    section{
+        position: relative;
     }
 
     section h1{
@@ -366,13 +376,114 @@ footer a:hover span {
     }
 
     .img-container{
-    width: calc(17vw + 17vh);
-    height: calc(25vw + 25vh);
-
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 80vw;
+    height: 100vh;
     }
-}
 
-@media only screen and (max-width: 900px){
+    nav{
+        backdrop-filter: blur(0px) saturate(100%);
+        -webkit-backdrop-filter: blur(0px) saturate(100%);
+        box-shadow: none;
+        padding-left: calc(2.5vw + 2.5vh);
+        padding-right: calc(2.5vw + 2.5vh);
+    }
 
 
+    
+    #logo-box img{
+        width: calc(3vw + 3vh);
+    }
+
+    #logo-box a{
+        font-size: calc(1.5vw + 1.5vh);
+        width: 50%;
+    }
+
+    footer{
+        /* padding: calc(2vw + 2vh) 10% calc(2vw + 2vh) 10%; */
+        width: auto;
+        position: absolute;
+        top: calc(28vw + 28vh);
+        right: 5vw;
+        padding: 0 0 0 0;
+        /* border: solid lawngreen; */
+        display: grid;
+        row-gap: calc(10vw + 10vh);
+        transform: translate(-50%, -50%);
+    }
+
+        footer a{
+        font-size: calc(1.3vw + 1.3vh);
+        writing-mode: vertical-rl;
+        /* text-orientation: mixed; */
+    }
+
+    #burger{
+        font-size: calc(2.5vw + 2.5vh);
+        opacity: 0.8;
+    }
+
+    #burger-con{
+        cursor: pointer;
+        display:initial;
+    }
+
+    #burger-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    #burger-box a{
+        font-size: calc(4vw + 4vh);
+        opacity: 0;
+        text-align: center;
+        line-height: 1.5;
+        font-family: bold;
+    }
+
+    #icons{
+        right: calc(1.3vw + 1.3vh);
+        top: calc(20vw + 20vh);
+        display: none;
+    }
+
+    #icons li{
+        writing-mode: vertical-rl;
+       font-size: calc(1.5vw + 1.5vh);
+    }
+
+
+
+    .behance-circle{
+        top: calc(7vw + 7vh);
+        left: calc(1.5vw + 1.5vh);
+        width:calc(8vw + 8vh);
+        height:calc(8vw + 8vh);
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; */
+        backdrop-filter: blur(0px) saturate(100%);
+        -webkit-backdrop-filter: blur(0px) saturate(100%);
+    }
+
+    .behance-circle a{
+        font-size: calc(1.8vw + 1.8vh);
+        text-align: left;
+        font-family: medium;
+    }
+
+    .desc{
+        text-align: right;
+        width: 80%;
+        font-size: calc(1.8vw + 1.8vh);
+        bottom: calc(1vw + 1vh);
+        right: calc(1vw + 1vh);
+        
+    }
+
+    
 }
