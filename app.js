@@ -75,7 +75,7 @@ function parallax(e) {
         gsap.fromTo('.left', 0.6, { delay:0.7, opacity: 0, ease: "expo.out" ,x:'-100'}, { delay:0.7, opacity: 1, ease: "expo.out", x:'0' })
         gsap.fromTo('.right', 0.6, { delay:0.7, opacity: 0, ease: "expo.out" ,x:'100'}, { delay:0.7, opacity: 1, ease: "expo.out", x:'0' })
         gsap.fromTo('.behance-circle', 0.6, { delay:0.75, opacity: 0, ease: "expo.out" ,scaleX: 0, scaleY: 0}, { delay:0.75, opacity: 1, ease: "expo.out", scaleX: 1, scaleY: 1 })
-        gsap.fromTo('.desc', .6, {delay:0.9, opacity: 0, y: '100', ease: "expo.out" }, {delay:0.9, opacity: 1, y: '0', ease: "expo.out" });
+        gsap.fromTo('.desc', .6, {delay:0.8, opacity: 0, y: '100', ease: "expo.out" }, {delay:0.8, opacity: 1, y: '0', ease: "expo.out" });
 
 
     
