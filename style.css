@@ -99,6 +99,10 @@ section{
     z-index: 1;
 }
 
+.img-logo{
+    display: none;
+}
+
 
 
 
@@ -126,6 +130,7 @@ section{
     font-size: calc(.8vw + .8vh);
     color: var(--black);
 }
+
 
 h2{
     position: absolute;
@@ -178,7 +183,7 @@ height: auto;
 
 a {
     font-size: calc(.7vw + .7vh);
-    font-family: medium;
+    font-family: regular;
     text-decoration: none;
     color: var(--black);
 }
@@ -207,6 +212,10 @@ footer{
     padding: calc(1.3vw + 1.3vw) 10% calc(1.3vw + 1.3vw) 10%;
 }
 
+#burger{
+    display: none;
+}
+
 
 
 #icons {
@@ -221,7 +230,7 @@ footer{
     transform: translate(-50%, -50%);
     font-size: calc(.7vw + .7vh);
     cursor: pointer;
-    font-family: medium;
+    font-family: regular;
 }
 
 
@@ -340,13 +349,13 @@ footer a:hover span {
     transform: translate3d(0, -2px, 0);
 }
 
-    #burger-con{
+    /* #burger-con{
         cursor: pointer;
         display:none;
     }
 
 
-
+ */
 
 
 /* @media only screen and (max-width: 319px) {
@@ -359,6 +368,8 @@ footer a:hover span {
 
 
 @media screen and (orientation:portrait){
+
+    
     #nav-links{
     display: none;
     }
@@ -389,10 +400,14 @@ footer a:hover span {
         box-shadow: none;
         padding-left: calc(2.5vw + 2.5vh);
         padding-right: calc(2.5vw + 2.5vh);
+        display: none;
     }
 
 
-    
+    #logo-box{
+        opacity:1;
+    }
+
     #logo-box img{
         width: calc(3vw + 3vh);
     }
@@ -403,48 +418,67 @@ footer a:hover span {
     }
 
     footer{
-        /* padding: calc(2vw + 2vh) 10% calc(2vw + 2vh) 10%; */
-        width: auto;
-        position: absolute;
-        top: calc(28vw + 28vh);
-        right: 5vw;
+        /* padding: 10%  calc(2vw + 2vh) 10% calc(2vw + 2vh) ; */
+        background-color: var(--white);
+        /* border: solid 1px red; */
+        width: calc(7.2vw + 7.2vh);
+        top: 0;
+        right: 0;
         padding: 0 0 0 0;
-        /* border: solid lawngreen; */
         display: grid;
-        row-gap: calc(10vw + 10vh);
-        transform: translate(-50%, -50%);
+        justify-content: space-evenly;
+        justify-items: center;
+        align-items: center;
+        z-index: 999;
+
     }
 
+    footer i{
+        font-size: calc(1.8vw + 1.8vh);
+    }
         footer a{
         font-size: calc(1.3vw + 1.3vh);
         writing-mode: vertical-rl;
-        /* text-orientation: mixed; */
     }
+
 
     #burger{
-        font-size: calc(2.5vw + 2.5vh);
-        opacity: 0.8;
-    }
-
-    #burger-con{
+        opacity: 1;
         cursor: pointer;
         display:initial;
     }
 
+
+
+
     #burger-box{
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 0;
+        right: 20vw;
+        width: 80vw;
+        height: 100vh;
+        z-index: 1;
+        display: none;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        background-color: transparent;
+        backdrop-filter: blur(0) saturate(100%);
+    }
+
+    .burg-link-box{
         display: none;
     }
 
-    #burger-box a{
-        font-size: calc(4vw + 4vh);
+    
+
+    .burger-links{
+        color: #ffffff;
+        font-size: calc(3vw + 3vh);
         opacity: 0;
         text-align: center;
-        line-height: 1.5;
-        font-family: bold;
+        font-family: medium;
+        line-height: 1.5
     }
 
     #icons{
@@ -461,28 +495,44 @@ footer a:hover span {
 
 
     .behance-circle{
-        top: calc(7vw + 7vh);
-        left: calc(1.5vw + 1.5vh);
-        width:calc(8vw + 8vh);
-        height:calc(8vw + 8vh);
-        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; */
+
+        top:calc(1.5vw + 1.5vh);
+        right: calc(1.5vw + 1.5vh);
+        width: 50%;
+        height:auto;
         backdrop-filter: blur(0px) saturate(100%);
         -webkit-backdrop-filter: blur(0px) saturate(100%);
+        border-radius: 0;
+        opacity: 1;
     }
 
     .behance-circle a{
+        color: var(--white);
+        line-height: 1.5;
         font-size: calc(1.8vw + 1.8vh);
-        text-align: left;
+        text-align: right;
         font-family: medium;
     }
+    
 
     .desc{
+        opacity: 1;
+        color: var(--white);
         text-align: right;
         width: 80%;
         font-size: calc(1.8vw + 1.8vh);
-        bottom: calc(1vw + 1vh);
-        right: calc(1vw + 1vh);
-        
+        bottom: calc(1.5vw + 1.5vh);
+        right: calc(1.5vw + 1.5vh);
+    }
+
+
+    .img-logo{
+        filter: invert(100%) sepia(2%) saturate(1760%) hue-rotate(186deg) brightness(109%) contrast(87%);
+        display: initial;
+        opacity: 1;
+        position: absolute;
+        top:calc(1.5vw + 1.5vh);
+        left: calc(1.5vw + 1.5vh);
     }
 
     
