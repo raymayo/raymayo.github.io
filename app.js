@@ -78,18 +78,18 @@ function activateNavItem(item) {
 // })
 
 //PARALLAX EFFECT
-// document.addEventListener("mousemove", parallax);
+document.addEventListener("mousemove", parallax);
 
-// function parallax(e) {
-//     this.querySelectorAll('.layer').forEach(layer => {
-//         const speed = layer.getAttribute('data-speed');
-//         const x = (window.innerWidth - e.pageX * speed)/100
-//         const y = (window.innerHeight - e.pageY * speed)/100
+function parallax(e) {
+    this.querySelectorAll('.layer').forEach(layer => {
+        const speed = layer.getAttribute('data-speed');
+        const x = (window.innerWidth - e.pageX * speed)/100
+        const y = (window.innerHeight - e.pageY * speed)/100
 
-//         layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
 
-//     })
-// }
+    })
+}
 
 const images = {
   projOne: {
@@ -114,10 +114,10 @@ let page = document.getElementById("fullpage");
 
 
 if (window.innerHeight > window.innerWidth) {
-  page.children[0].children[0].style.backgroundImage = ` linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url(${images.projOne.image};)`;
-  page.children[1].children[0].style.backgroundImage = ` linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url(${images.projTwo.image};)`;
-  page.children[2].children[0].style.backgroundImage = ` linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url(${images.projThree.image};)`;
-  page.children[3].children[0].style.backgroundImage = ` linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url(${images.projFour.image};)`;
+  page.children[0].children[0].style.backgroundImage = ` linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),url(${images.projOne.image};)`;
+  page.children[1].children[0].style.backgroundImage = ` linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),url(${images.projTwo.image};)`;
+  page.children[2].children[0].style.backgroundImage = ` linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),url(${images.projThree.image};)`;
+  page.children[3].children[0].style.backgroundImage = ` linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),url(${images.projFour.image};)`;
 
   const portraitTimeline = gsap.timeline({ duration: 1 });
 
