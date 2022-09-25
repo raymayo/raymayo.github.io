@@ -47,11 +47,14 @@
 }
 
 
+
+
 section{
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 .img-container{
@@ -392,6 +395,7 @@ footer a:hover span {
     left: 0;
     width: 80vw;
     height: 100vh;
+    pointer-events: none;
     }
 
     nav{
@@ -420,8 +424,7 @@ footer a:hover span {
     footer{
         /* padding: 10%  calc(2vw + 2vh) 10% calc(2vw + 2vh) ; */
         background-color: var(--white);
-        /* border: solid 1px red; */
-        width: calc(7.2vw + 7.2vh);
+        width: 20vw;
         top: 0;
         right: 0;
         padding: 0 0 0 0;
@@ -430,6 +433,7 @@ footer a:hover span {
         justify-items: center;
         align-items: center;
         z-index: 999;
+        height: calc(var(--vh, 1vh) * 100);
 
     }
 
@@ -437,8 +441,10 @@ footer a:hover span {
         font-size: calc(1.8vw + 1.8vh);
     }
         footer a{
-        font-size: calc(1.3vw + 1.3vh);
+        font-size: calc(1.5vw + 1.5vh);
+        font-family: regular;
         writing-mode: vertical-rl;
+        text-transform: uppercase;
     }
 
 
@@ -496,8 +502,8 @@ footer a:hover span {
 
     .behance-circle{
 
-        top:calc(1.5vw + 1.5vh);
-        right: calc(1.5vw + 1.5vh);
+        top:2vw;
+        right: 4vw;
         width: 50%;
         height:auto;
         backdrop-filter: blur(0px) saturate(100%);
@@ -507,22 +513,24 @@ footer a:hover span {
     }
 
     .behance-circle a{
+        pointer-events: auto;
         color: var(--white);
         line-height: 1.5;
-        font-size: calc(1.8vw + 1.8vh);
+        font-size: calc(1.5vw + 1.5vh);
         text-align: right;
-        font-family: medium;
+        font-family: regular;
     }
     
 
     .desc{
         opacity: 1;
+        font-family: regular;
         color: var(--white);
         text-align: right;
         width: 80%;
-        font-size: calc(1.8vw + 1.8vh);
-        bottom: calc(1.5vw + 1.5vh);
-        right: calc(1.5vw + 1.5vh);
+        font-size: calc(1.5vw + 1.5vh);
+        bottom: 2vw;
+        right: 4vw;
     }
 
 
@@ -531,8 +539,9 @@ footer a:hover span {
         display: initial;
         opacity: 1;
         position: absolute;
-        top:calc(1.5vw + 1.5vh);
-        left: calc(1.5vw + 1.5vh);
+        top:4vw;
+        left: 4vw;
+        width:calc(3.5vw + 3.5vh);
     }
 
     
