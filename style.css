@@ -377,10 +377,10 @@ footer a:hover span {
         width: auto;
         height: auto;
         position: relative;
-        border: 1px solid yellow;
+        border: 1px solid magenta;
     }
 
-    body > *{
+    .section > *{
         pointer-events: none;
     }
     #nav-links{
@@ -394,9 +394,9 @@ footer a:hover span {
     /* section{
         position: relative;
     } */
-    /* .section:nth-child(1){
+    .section:nth-child(1){
         background-color: yellow;
-    } */
+    }
 
     .img-container{
     position: absolute;
