@@ -404,9 +404,9 @@ footer a:hover span {
 
     .img-container{
     position: absolute;
-    /* top:0;
+    top:0;
     left: 0;
-    width: 50vw;
+    /* width: 50vw;
     height: 100vh;
     border: solid 1px yellow;
     pointer-events: none;
