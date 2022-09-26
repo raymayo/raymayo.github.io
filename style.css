@@ -402,16 +402,16 @@ footer a:hover span {
     position: absolute;
     top:0;
     left: 0;
-    width: 80vw;
+    width: 50vw;
     height: 100vh;
     /* pointer-events: none; */
     /* display: none; */
     }
-    .img-container *{
+    /* .img-container *{
         touch-action: none;
         pointer-events: none;
         display: none;
-    }
+    } */
 
     nav{
         backdrop-filter: blur(0px) saturate(100%);
