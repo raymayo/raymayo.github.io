@@ -407,8 +407,9 @@ footer a:hover span {
     top:0;
     left: 0;
     border: solid 1px yellow;
-    /* width: 50vw;
     height: 100vh;
+    /* width: 50vw;
+
     pointer-events: none;
     visibility: hidden;
     touch-action: pan-y; */
