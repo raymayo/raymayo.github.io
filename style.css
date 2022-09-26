@@ -372,9 +372,9 @@ footer a:hover span {
 
 @media screen and (orientation:portrait){
 
-    .container{
+    /* .container{
         touch-action: auto;
-    }
+    } */
     #nav-links{
     display: none;
     }
