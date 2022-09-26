@@ -69,6 +69,7 @@ section{
     height: clamp(150px,50%,448px); */
     /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
     cursor: default;
+    pointer-events: none;
 }
 
 .img-container > *{
@@ -386,9 +387,9 @@ footer a:hover span {
     /* section{
         position: relative;
     } */
-    .section:nth-child(1){
+    /* .section:nth-child(1){
         background-color: yellow;
-    }
+    } */
 
     .img-container{
     position: absolute;
@@ -397,12 +398,11 @@ footer a:hover span {
     width: 80vw;
     height: 100vh;
     pointer-events: none;
-    touch-action: none;
-    display: none;
     }
     .img-container *{
         touch-action: none;
         pointer-events: none;
+        display: none;
     }
 
     nav{
