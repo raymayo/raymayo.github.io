@@ -406,6 +406,7 @@ footer a:hover span {
     border: solid 1px orangered;
     /* pointer-events: none; */
     /* display: none; */
+    touch-action: pan-y;
     }
     /* .img-container *{
         touch-action: none;
