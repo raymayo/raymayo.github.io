@@ -378,13 +378,18 @@ footer a:hover span {
         height: auto;
         position: relative;
         border: 1px solid magenta;
+        touch-action: pan-y;
     } 
+
+    body *{ touch-action: pan-y;}
     /* section >*{
         pointer-events: none;
     } */
     #nav-links{
     display: none;
     }
+
+    #fullpage{touch-action: pan-y;}
     
     /* footer a:nth-child(2){
     display: none;
