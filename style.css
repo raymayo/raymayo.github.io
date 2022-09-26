@@ -399,16 +399,16 @@ footer a:hover span {
         position: relative;
     } */
     .section:nth-child(1){
-        background-color: lightpink;
+        background-color: lightgreen;
     }
 
     .img-container{
     position: absolute;
     top:0;
     left: 0;
+    border: solid 1px yellow;
     /* width: 50vw;
     height: 100vh;
-    border: solid 1px yellow;
     pointer-events: none;
     visibility: hidden;
     touch-action: pan-y; */
