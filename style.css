@@ -399,20 +399,20 @@ footer a:hover span {
         position: relative;
     } */
     .section:nth-child(1){
-        background-color: lightseagreen;
+        background-color: lightpink;
     }
 
-    /* .img-container{
+    .img-container{
     position: absolute;
-    top:0;
+    /* top:0;
     left: 0;
     width: 50vw;
     height: 100vh;
     border: solid 1px yellow;
     pointer-events: none;
     visibility: hidden;
-    touch-action: pan-y;
-    } */
+    touch-action: pan-y; */
+    }
 
 
     /* .img-container *{
