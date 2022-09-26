@@ -372,7 +372,7 @@ footer a:hover span {
 
 @media screen and (orientation:portrait){
 
-    #main{
+    .container{
         touch-action: auto;
     }
     #nav-links{
@@ -398,8 +398,10 @@ footer a:hover span {
     width: 80vw;
     height: 100vh;
     pointer-events: none;
+    touch-action: none;
     }
     .img-container *{
+        touch-action: none;
         pointer-events: none;
     }
 
