@@ -9,14 +9,13 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 
 
-
     let tl = new TimelineMax({onStart: ()=> {fullpage_api.setAllowScrolling(false)},
       onComplete: () => {fullpage_api.setAllowScrolling(true)}
     });
 
     if (window.innerHeight > window.innerWidth) {
 
-      $('section').removeClass('section');
+      $('proj-section').removeClass('section');
 
       new fullpage("#fullpage", {
         //options here
