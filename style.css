@@ -383,12 +383,11 @@ footer a:hover span {
     display: none;
     } */
 
-    section{
+    /* section{
         position: relative;
-    }
-
-    section h1{
-        display:none;
+    } */
+    .section:nth-child(1){
+        background-color: yellow;
     }
 
     .img-container{
@@ -399,6 +398,7 @@ footer a:hover span {
     height: 100vh;
     pointer-events: none;
     touch-action: none;
+    display: none;
     }
     .img-container *{
         touch-action: none;
