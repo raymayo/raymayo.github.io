@@ -378,10 +378,10 @@ footer a:hover span {
         height: auto;
         position: relative;
         border: 1px solid magenta;
-        touch-action: pan-y;
+        /* touch-action: pan-y; */
     } 
-
-    body *{ touch-action: pan-y;}
+/* 
+    body *{ touch-action: pan-y;} */
     /* section >*{
         pointer-events: none;
     } */
@@ -402,21 +402,19 @@ footer a:hover span {
         background-color: lightseagreen;
     }
 
-    .img-container{
+    /* .img-container{
     position: absolute;
     top:0;
     left: 0;
     width: 50vw;
     height: 100vh;
     border: solid 1px yellow;
-    /* pointer-events: none; */
+    pointer-events: none;
     visibility: hidden;
     touch-action: pan-y;
-    }
+    } */
 
-    .img-container > *{
-        visibility: visible;
-    }
+
     /* .img-container *{
         touch-action: none;
         pointer-events: none;
