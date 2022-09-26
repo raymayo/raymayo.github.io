@@ -410,8 +410,12 @@ footer a:hover span {
     height: 100vh;
     border: solid 1px yellow;
     /* pointer-events: none; */
-    display: none;
+    visibility: hidden;
     touch-action: pan-y;
+    }
+
+    .img-container > *{
+        visibility: visible;
     }
     /* .img-container *{
         touch-action: none;
