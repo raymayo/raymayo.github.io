@@ -373,9 +373,15 @@ footer a:hover span {
 
 @media screen and (orientation:portrait){
 
-    /* .container{
-        touch-action: auto;
-    } */
+    body{
+        width: auto;
+        height: auto;
+        position: relative;
+    }
+
+    body > *{
+        pointer-events: none;
+    }
     #nav-links{
     display: none;
     }
@@ -397,7 +403,7 @@ footer a:hover span {
     left: 0;
     width: 80vw;
     height: 100vh;
-    pointer-events: none;
+    /* pointer-events: none; */
     }
     .img-container *{
         touch-action: none;
