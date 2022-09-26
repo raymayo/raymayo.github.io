@@ -397,6 +397,9 @@ footer a:hover span {
     height: 100vh;
     pointer-events: none;
     }
+    .img-container *{
+        pointer-events: none;
+    }
 
     nav{
         backdrop-filter: blur(0px) saturate(100%);

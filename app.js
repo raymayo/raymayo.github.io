@@ -198,17 +198,8 @@ var i = "OFF";
 
 const menu = gsap.timeline({ duration: 1, delay: -1 });
 
-menu.to("#burger-box", {
-  display: "grid",
-  backdropFilter: "blur(20px)",
-  ease: Expo.easeOut,
-});
-menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");
-menu.to(
-  ".burger-links",
-  { opacity: 0.7, ease: Expo.easeOut, stagger: 0.1 },
-  "<.5"
-);
+menu.to("#burger-box", {display: "grid",backdropFilter: "blur(20px)",ease: Expo.easeOut,});
+menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");menu.to(".burger-links",{ opacity: 0.7, ease: Expo.easeOut, stagger: 0.1 },"<.5");
 
 menu.pause(0);
 
