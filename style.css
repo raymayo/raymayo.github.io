@@ -54,7 +54,7 @@ section{
     align-items: center;
     justify-content: center;
     position: relative;
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: calc(var(--vh, 1vh) * 100); */
 }
 
 .img-container{
@@ -399,6 +399,7 @@ footer a:hover span {
     left: 0;
     width: 80vw;
     height: 100vh;
+    pointer-events: none;
     }
 
     nav{
