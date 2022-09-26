@@ -378,11 +378,10 @@ footer a:hover span {
         height: auto;
         position: relative;
         border: 1px solid magenta;
-    }
-
-    section *{
+    } 
+    /* section >*{
         pointer-events: none;
-    }
+    } */
     #nav-links{
     display: none;
     }
@@ -406,7 +405,7 @@ footer a:hover span {
     height: 100vh;
     border: solid 1px orangered;
     /* pointer-events: none; */
-    display: none;
+    /* display: none; */
     }
     /* .img-container *{
         touch-action: none;
@@ -415,11 +414,6 @@ footer a:hover span {
     } */
 
     nav{
-        backdrop-filter: blur(0px) saturate(100%);
-        -webkit-backdrop-filter: blur(0px) saturate(100%);
-        box-shadow: none;
-        padding-left: calc(2.5vw + 2.5vh);
-        padding-right: calc(2.5vw + 2.5vh);
         display: none;
     }
 
