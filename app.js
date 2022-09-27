@@ -78,18 +78,19 @@ function activateNavItem(item) {
 // })
 
 //PARALLAX EFFECT
-// document.addEventListener("mousemove", parallax);
+document.addEventListener("mousemove", parallax);
 
-// function parallax(e) {
-//     this.querySelectorAll('.layer').forEach(layer => {
-//         const speed = layer.getAttribute('data-speed');
-//         const x = (window.innerWidth - e.pageX * speed)/100
-//         const y = (window.innerHeight - e.pageY * speed)/100
+function parallax(e) {
+    this.querySelectorAll('.layer').forEach(layer => {
+      
+        const speed = layer.getAttribute('data-speed');
+        const x = (window.innerWidth - e.pageX * speed)/100
+        const y = (window.innerHeight - e.pageY * speed)/100
 
-//         layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        layer.style.translate = `${x}px ${y}px`;
 
-//     })
-// }
+    })
+}
 
 const images = {
   projOne: {
@@ -196,10 +197,11 @@ if (window.innerHeight > window.innerWidth) {
 // ui
 var i = "OFF";
 
-const menu = gsap.timeline({ duration: 1, delay: -1 });
+const menu = gsap.timeline();
 
-menu.to("#burger-box", {display: "grid",backdropFilter: "blur(20px)",ease: Expo.easeOut,});
-menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");menu.to(".burger-links",{ opacity: 0.7, ease: Expo.easeOut, stagger: 0.1 },"<.5");
+menu.to("#burger-box", {display: "grid",backdropFilter: "blur(15px)",ease: Expo.easeOut,});
+menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");
+menu.to(".burger-links",{ opacity: 1, ease: Expo.easeOut, stagger: 0.1 },"<.5");
 
 menu.pause(0);
 
