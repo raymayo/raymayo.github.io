@@ -69,11 +69,12 @@ section{
     height: clamp(150px,50%,448px); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     cursor: default;
+    border-radius: 3px;
 }
 
-.img-container > *{
+/* .img-container > *{
     opacity: 0;
-}
+} */
 
 
 .img-container h1{
@@ -143,8 +144,16 @@ h2{
     text-align: center;
     bottom: -15%;
     width: 100%;
-    font-size: calc(.55vw + .55vh);
+    font-size: calc(.8vw + .8vh);
     line-height: 1.5;
+}
+
+.desc span{
+    display: none;
+}
+
+.desc a{
+    display: none;
 }
 
 /* .img-container > *{
@@ -388,26 +397,29 @@ footer a:hover span {
 
     #fullpage{touch-action: pan-y;}
     
-    /* footer a:nth-child(2){
+    footer a:nth-child(2){
     display: none;
-    } */
+    }
 
     section{
         position: relative;
-        align-items:stretch;
-        justify-content: flex-start;
+        justify-content: center;
+        align-items:center;
+        align-content: flex-end;        
         height: calc(var(--vh, 1vh) * 100);
     }
 
     .img-container{
-        height: calc(var(--vh, 1vh) * 100);
-    width:80vw;                                                                                                                                               
+        margin-top: 10vh;
+        height: calc(35vw + 35vh);
+        width:80vw;       
+        border-radius: 8px;
     }
 
-
-    nav{
-        display: none;
+    .img-container h1{
+    opacity: 0;
     }
+
 
 
     #logo-box{
@@ -422,9 +434,9 @@ footer a:hover span {
         font-size: calc(1.5vw + 1.5vh);
         width: 50%;
     }
-
+/* 
     footer{
-        /* padding: 10%  calc(2vw + 2vh) 10% calc(2vw + 2vh) ; */
+        padding: 10%  calc(2vw + 2vh) 10% calc(2vw + 2vh) ;
         background-color: var(--white);
         width: 20vw;
         top: 0;
@@ -436,6 +448,21 @@ footer a:hover span {
         align-items: center;
         z-index: 999;
         height: calc(var(--vh, 1vh) * 100);
+        display: none;
+    } */
+
+    footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(1.3vw + 1.3vw) 10% calc(1.3vw + 1.3vw) 10%;
+    backdrop-filter: blur(10px) saturate(100%);
+    /* border: solid 1px red; */
     }
 
     footer i{
@@ -444,8 +471,8 @@ footer a:hover span {
         footer a{
         font-size: calc(1.5vw + 1.5vh);
         font-family: regular;
-        writing-mode: vertical-rl;
-        text-transform: uppercase;
+        /* writing-mode: vertical-rl;
+        text-transform: uppercase; */
     }
 
 
@@ -461,15 +488,15 @@ footer a:hover span {
     #burger-box{
         position: absolute;
         top: 0;
-        right: 20vw;
-        width: 80vw;
+        right: 0;
+        width: 100vw;
         height: 100vh;
         z-index: 1;
         display: none;
         justify-content: center;
         justify-items: center;
         align-items: center;
-        background-color: transparent;
+        background-color: rgba(0,0,0,0.3);
         backdrop-filter: blur(0) saturate(100%);
     }
 
@@ -502,40 +529,63 @@ footer a:hover span {
 
 
     .behance-circle{
-       pointer-events: auto;
-        top:2vw;
-        right: 4vw;
+       /* pointer-events: auto;
+        top:0;
+        right: 0;
         width: 50%;
         height:auto;
         backdrop-filter: blur(0px) saturate(100%);
         -webkit-backdrop-filter: blur(0px) saturate(100%);
         border-radius: 0;
-        opacity: 1;
+        opacity: 1; */
+        display: none;
     }
 
-    .behance-circle a{
+    /* .behance-circle a{
         color: var(--white);
         line-height: 1.5;
         font-size: calc(1.5vw + 1.5vh);
         text-align: right;
         font-family: regular;
     }
-    
+     */
 
     .desc{
+        box-shadow: rgba(0, 0, 0, 0.3) 0px -4px 6px -1px,rgba(0, 0, 0, 0.26) 0px -2px 4px -1px;
+        background-color: rgba(0,0,0,0.3);
+        backdrop-filter: blur(20px) saturate(100%);
         opacity: 1;
         font-family: light;
         color: var(--white);
-        text-align: right;
-        width: 80%;
-        font-size: calc(1.5vw + 1.5vh);
-        bottom: 2vw;
-        right: 4vw;
+        text-align: left;
+        width: 100%;
+        font-size: calc(1vw + 1vh);
+        padding: calc(1vw + 1vh);
+        /* bottom: 2vw;
+        right: 4vw; */
+        bottom: 0;
+        left: 0;
         font-weight: normal;
+        border-radius:0 0 8px 8px;
     }
 
+    .desc span{
+    display: initial;
+    font-family: bold;
+    font-size: calc(1.6vw + 1.6vh);
+}
 
-    .img-logo{
+    .desc a{
+    float: right;
+    color: var(--white);
+    display: initial;
+    font-family: medium;
+    padding-top: calc(1vw + 1vh);
+    font-size: calc(1.3vw + 1.3vh);
+}
+
+
+    /* .img-logo{
         filter: invert(100%) sepia(2%) saturate(1760%) hue-rotate(186deg) brightness(109%) contrast(87%);
         display: initial;
         opacity: 1;
@@ -543,7 +593,7 @@ footer a:hover span {
         top:4vw;
         left: 4vw;
         width:calc(3.5vw + 3.5vh);
-    }
+    } */
 
     
 }
