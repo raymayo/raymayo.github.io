@@ -139,7 +139,7 @@ var i = "OFF";
 
 const menu = gsap.timeline();
 
-menu.to("#burger-box", {display: "grid",backdropFilter: "blur(15px)",ease: Expo.easeOut,});
+menu.to("#burger-box", {display: "grid",backdropFilter: "blur(50px)",ease: Expo.easeOut,});
 menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");
 menu.to(".burger-links",{ opacity: 1, ease: Expo.easeOut, stagger: 0.1 },"<.5");
 
@@ -160,3 +160,9 @@ let burger = document.getElementById("burger").addEventListener("click", () => {
     menu.reverse(0);
   }
 });
+
+let contactBtn = document.getElementById('contactBtn')
+
+contactBtn.addEventListener('click', ()=> {
+  gsap.to('#contactBg', 1, { display: 'initial', backdropFilter: 'blur(50px)', ease: Expo.easeOut})
+})
