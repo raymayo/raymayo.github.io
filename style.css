@@ -113,7 +113,6 @@ display: flex;
 
 .img-container{
     position: relative;
-    background-image: url(https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
@@ -123,9 +122,20 @@ display: flex;
     height: clamp(150px,50%,448px); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     cursor: default;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 
+#proj-01 .img-container {
+    background-image: url('./img/cluebox.png')
+}
+
+#proj-02 .img-container {
+    background-image: url('./img/uplifted.png')
+}
+
+#proj-03 .img-container {
+    background-image: url('./img/mockup3.jpg')
+}
 
 .img-container h1{
         position:absolute;
@@ -161,7 +171,7 @@ display: flex;
     position: absolute;
     top:calc(1vw + 1vh);
     right: calc(1.5vw + 1.5vh);
-    border: rgba(0, 0, 0, 0.55) calc(.33vw - .33vh) solid;
+    border: rgba(0, 0, 0, 1) calc(.2vw - .2vh) solid;
     width:  calc(6.5vh + 6.5vw);
     height: calc(6.5vh + 6.5vw);
     text-align: center;
@@ -169,8 +179,7 @@ display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    backdrop-filter: blur(50px) saturate(100%);
-    -webkit-backdrop-filter: blur(50px) saturate(100%);
+    backdrop-filter: blur(10px) saturate(100%);
 }
 
 
@@ -186,7 +195,7 @@ h2{
     text-align: center;
     bottom: -15%;
     width: 100%;
-    font-size: calc(.8vw + .8vh);
+    font-size: calc(.6vw + .6vh);
     line-height: 1.5;
 }
 
@@ -238,27 +247,40 @@ footer{
     top: 0;
     left:0;
     background-color: rgba(0,0,0,0.3);
-    backdrop-filter: blur(50px) saturate(100%);
+    backdrop-filter: blur(0px) saturate(100%);
     z-index: 500;
     /* display: none; */
-    display: grid;
+    display: none;
     align-items: center;
     justify-content: center;
-
 }
 
 #contactForm{
-    border: yellow 1px solid;
+    border-radius: 3px;
+    background-color: var(--white);
     width: calc(30vw + 30vh);
     height: calc(18vw + 18vh);
     position: relative;
 }
 
-#contactForm i{
-    position: absolute;
-    top: 0;
-    right: 0;
+#contactForm h1{
+    font-family: bold;
+    font-size: calc(1.3vw + 1.3vh);
+    margin: calc(1.5vw + 1.5vh);
+    font-size: 40px;
 }
+
+#contactForm i{
+    font-size: calc(.8vw + .8vh);
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+}
+
+/* form > * {
+    border: solid 1px magenta;
+} */
 
 
 
@@ -266,14 +288,55 @@ form {
     display: grid;
     justify-items: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-
 }
 
-form > *{
-    border: solid 1px red;
+
+form input{
+    width: calc(24vw + 24vh);
+    height: calc(1.5vw + 1.5vh);
+    padding: 8px;
+    margin-bottom: calc(1.5vw + 1.5vh);
+    font-family: medium;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px solid var(--black);
+    background-color: var(--white);
 }
+
+form input:focus{
+    border: 1px solid var(--black);
+    outline: none;
+}
+
+form textarea{
+    width: calc(24vw + 24vh);
+    height: calc(6vw + 6vh);
+    padding: 8px;
+    margin-bottom: calc(1.5vw + 1.5vh);
+    border-radius: 3px;
+    font-family: medium;
+    font-size: 20px;
+    resize: none;
+    background-color: var(--white);
+}
+
+form textarea:focus {
+    border: 1px solid var(--black);
+    outline: none;
+}
+
+form button{
+    font-family: medium;
+    border: 1px solid var(--black);
+    font-size: 20px;
+    width: calc(24vw + 24vh);
+    height: calc(1.5vw + 1.5vh);
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
 
 
 

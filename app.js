@@ -73,33 +73,6 @@ function activateNavItem(item) {
 // })
 
 
-
-const images = {
-  projOne: {
-    image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  projTwo: {
-    image:
-      "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-  },
-  projThree: {
-    image:
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  projFour: {
-    image:
-      "https://images.unsplash.com/photo-1611930021592-a8cfd5319ceb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-  },
-};
-
-let page = document.getElementById("fullpage");
-
-page.children[0].children[0].style.backgroundImage = `url(${images.projOne.image};)`;
-page.children[1].children[0].style.backgroundImage = `url(${images.projTwo.image};)`;
-page.children[2].children[0].style.backgroundImage = `url(${images.projThree.image};)`;
-page.children[3].children[0].style.backgroundImage = `url(${images.projFour.image};)`;
-
 if (window.innerHeight > window.innerWidth) {
   
 
@@ -161,8 +134,26 @@ let burger = document.getElementById("burger").addEventListener("click", () => {
   }
 });
 
-let contactBtn = document.getElementById('contactBtn')
+let contactBtn = document.getElementById('contactBtn');
+let closeContact = document.getElementById('closeContact');
+let formBtn = document.getElementById('formBtn');
 
 contactBtn.addEventListener('click', ()=> {
-  gsap.to('#contactBg', 1, { display: 'initial', backdropFilter: 'blur(50px)', ease: Expo.easeOut})
+  gsap.to('#contactBg', 1, {display: 'grid', backdropFilter: 'blur(50px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeOut})
+  gsap.to('#contactForm', 1, { opacity: 1, ease: Expo.easeOut })
+})
+
+closeContact.addEventListener('click', ()=> {
+  gsap.to('#contactForm', 1, { opacity: 0, ease: Expo.easeOut })
+  gsap.to('#contactBg', 1, {backdropFilter: 'blur(0px)', display: 'none', backgroundColor:'rgba(0, 0, 0, 0.0)' ,ease: Expo.easeOut })
+})
+
+formBtn.addEventListener('mouseover', ()=> {
+  console.log(true);
+  gsap.to('#formBtn', .8, { backgroundColor: 'black', color: '#EFEFEF', ease: Expo.easeOut})
+})
+
+formBtn.addEventListener('mouseout', () => {
+  console.log(true);
+  gsap.to('#formBtn', .8, { backgroundColor: '#EFEFEF', color: 'black', ease: Expo.easeOut })
 })
