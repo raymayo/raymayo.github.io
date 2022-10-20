@@ -149,11 +149,10 @@ closeContact.addEventListener('click', ()=> {
 })
 
 formBtn.addEventListener('mouseover', ()=> {
-  console.log(true);
   gsap.to('#formBtn', .8, { backgroundColor: 'black', color: '#EFEFEF', ease: Expo.easeOut})
 })
 
 formBtn.addEventListener('mouseout', () => {
-  console.log(true);
   gsap.to('#formBtn', .8, { backgroundColor: '#EFEFEF', color: 'black', ease: Expo.easeOut })
-})
+});
+

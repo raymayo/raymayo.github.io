@@ -134,7 +134,7 @@ display: flex;
 }
 
 #proj-03 .img-container {
-    background-image: url('./img/mockup3.jpg')
+    background-image: url('./img/zenfi.png')
 }
 
 .img-container h1{
@@ -149,7 +149,7 @@ display: flex;
     top: -4vw;
     right:15vw;
     color: transparent;
-    -webkit-text-stroke-width: calc(.1vw + .1vh);
+    -webkit-text-stroke-width: calc(.06vw + .06vh);
     -webkit-text-stroke-color: var(--black);
 }
 
@@ -158,7 +158,7 @@ display: flex;
     bottom: -2vw;
     right: -13vw;
     color: transparent;
-    -webkit-text-stroke-width: calc(.1vw + .1vh);
+    -webkit-text-stroke-width: calc(.06vw + .06vh);
    -webkit-text-stroke-color: var(--black);
     z-index: 1;
     /* display: none; */
@@ -169,19 +169,24 @@ display: flex;
 .behance-circle{
     z-index: 1;
     position: absolute;
-    top:calc(1vw + 1vh);
-    right: calc(1.5vw + 1.5vh);
-    border: rgba(0, 0, 0, 1) calc(.2vw - .2vh) solid;
-    width:  calc(6.5vh + 6.5vw);
-    height: calc(6.5vh + 6.5vw);
+    top:5vh;
+    right:5vw;
+    border: rgba(0, 0, 0, 1) calc(.06vw - .06vh) solid;
+    width:  calc(6vh + 6vw);
+    height: calc(6vh + 6vw);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    backdrop-filter: blur(10px) saturate(100%);
+    backdrop-filter: blur(5px) saturate(100%);
+    cursor: pointer;
 }
 
+.view-container{
+    padding: 35% 10%;
+    border-radius: 100%;
+}
 
 .behance-circle a{
     font-size: calc(.8vw + .8vh);
@@ -197,6 +202,7 @@ h2{
     width: 100%;
     font-size: calc(.6vw + .6vh);
     line-height: 1.5;
+    display: none;
 }
 
 .desc span{
@@ -266,7 +272,7 @@ footer{
 #contactForm h1{
     font-family: bold;
     font-size: calc(1.3vw + 1.3vh);
-    margin: calc(1.5vw + 1.5vh);
+    margin: calc(1vw + 1vh);
     font-size: 40px;
 }
 
@@ -288,14 +294,14 @@ form {
     display: grid;
     justify-items: center;
     align-items: center;
+    padding: 2em;
 }
 
 
 form input{
-    width: calc(24vw + 24vh);
-    height: calc(1.5vw + 1.5vh);
-    padding: 8px;
-    margin-bottom: calc(1.5vw + 1.5vh);
+    width: 100%;
+    padding: .6em 8px;
+    margin-bottom: calc(1vw + 1vh);
     font-family: medium;
     font-size: 20px;
     border-radius: 3px;
@@ -309,10 +315,10 @@ form input:focus{
 }
 
 form textarea{
-    width: calc(24vw + 24vh);
+    width: 100%;
     height: calc(6vw + 6vh);
     padding: 8px;
-    margin-bottom: calc(1.5vw + 1.5vh);
+    margin-bottom: calc(1vw + 1vh);
     border-radius: 3px;
     font-family: medium;
     font-size: 20px;
@@ -329,8 +335,9 @@ form button{
     font-family: medium;
     border: 1px solid var(--black);
     font-size: 20px;
-    width: calc(24vw + 24vh);
-    height: calc(1.5vw + 1.5vh);
+    width: 100%;
+    padding: .6em 0;
+    /* height: calc(1.5vw + 1.5vh); */
     background-color: var(--white);
     color: var(--black);
     border-radius: 3px;
@@ -490,9 +497,6 @@ footer a:hover span {
         height: calc(var(--vh, 1vh) * 100);
     }
 
-    nav{
-
-    }
 
 
     #logo-box img{
@@ -528,7 +532,7 @@ footer a:hover span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(1.3vw + 1.3vw) 10% calc(1.3vw + 1.3vw) 10%;
+    padding: 5% 10%;
     /* backdrop-filter: blur(10px) saturate(100%); */
     /* border: solid 1px red; */
     }
@@ -584,7 +588,7 @@ footer a:hover span {
     
 
     .burger-links{
-        color: rgba(0,0,0,0.6);
+        color: rgba(0, 0, 0, 0.6);
         font-size: calc(3vw + 3vh);
         opacity: 0;
         text-align: center;
@@ -637,5 +641,101 @@ footer a:hover span {
     padding-top: calc(1vw + 1vh);
     font-size: calc(1.3vw + 1.3vh);
     }
+
+    h2 {
+            display: initial;
+    }
+
+
+        #contactBg {
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(0px) saturate(100%);
+            z-index: 500;
+            /* display: none; */
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        #contactForm {
+            border-radius: 3px;
+            background-color: var(--white);
+            width: 100%;
+            height: 56%;
+            position: relative;
+        }
+    
+        #contactForm h1 {
+            font-family: bold;
+            margin-bottom: calc(2vw + 2vh);
+            font-size: 20px;
+        }
+    
+        #contactForm i {
+            font-size: calc(1.5vw + 1.5vh);
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            cursor: pointer;
+        }
+    
+    
+        form {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            padding: 2em;
+        }
+    
+    
+        form input {
+            width: 100%;
+            padding: .5em 8px;
+            margin-bottom: calc(1.5vw + 1.5vh);
+            font-family: medium;
+            font-size: 16px;
+            border-radius: 3px;
+            border: 1px solid var(--black);
+            background-color: var(--white);
+        }
+    
+        form input:focus {
+            border: 1px solid var(--black);
+            outline: none;
+        }
+    
+        form textarea {
+            width: 100%;
+            height: calc(15vw + 15vh);
+            padding: 8px;
+            margin-bottom: calc(1.5vw + 1.5vh);
+            border-radius: 3px;
+            font-family: medium;
+            font-size: 16px;
+            resize: none;
+            background-color: var(--white);
+        }
+    
+        form textarea:focus {
+            border: 1px solid var(--black);
+            outline: none;
+        }
+    
+        form button {
+            font-family: medium;
+            border: 1px solid var(--black);
+            font-size: 16px;
+            width: 100%;
+            padding: .5em 0;
+            /* height: calc(1.5vw + 1.5vh); */
+            background-color: var(--white);
+            color: var(--black);
+            border-radius: 3px;
+            cursor: pointer;
+        }
     
 }
