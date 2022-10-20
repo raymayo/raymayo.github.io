@@ -114,7 +114,7 @@ const menu = gsap.timeline();
 
 menu.to("#burger-box", {display: "grid",backdropFilter: "blur(50px)",ease: Expo.easeOut,});
 menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");
-menu.to(".burger-links",{ opacity: 1, ease: Expo.easeOut, stagger: 0.1 },"<.5");
+menu.from(".burger-links",{ opacity: 0, y:50, ease: Expo.easeOut, stagger: 0.1 },"<");
 
 menu.pause(0);
 
@@ -134,18 +134,25 @@ let burger = document.getElementById("burger").addEventListener("click", () => {
   }
 });
 
+
+
+
 let contactBtn = document.getElementById('contactBtn');
 let closeContact = document.getElementById('closeContact');
 let formBtn = document.getElementById('formBtn');
 
+contactAnimation = gsap.timeline();
+contactAnimation.to('#contactBg', .6, { display: 'grid', backdropFilter: 'blur(50px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeInOut });
+contactAnimation.from('#contactForm', .8, { opacity: 0, scaleX: 2, scaleY: 2, ease: Expo.easeOut });
+contactAnimation.pause(0);
+
+
 contactBtn.addEventListener('click', ()=> {
-  gsap.to('#contactBg', 1, {display: 'grid', backdropFilter: 'blur(50px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeOut})
-  gsap.to('#contactForm', 1, { opacity: 1, ease: Expo.easeOut })
+  contactAnimation.play();
 })
 
 closeContact.addEventListener('click', ()=> {
-  gsap.to('#contactForm', 1, { opacity: 0, ease: Expo.easeOut })
-  gsap.to('#contactBg', 1, {backdropFilter: 'blur(0px)', display: 'none', backgroundColor:'rgba(0, 0, 0, 0.0)' ,ease: Expo.easeOut })
+  contactAnimation.reverse(0);
 })
 
 formBtn.addEventListener('mouseover', ()=> {

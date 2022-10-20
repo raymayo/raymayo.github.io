@@ -590,7 +590,7 @@ footer a:hover span {
     .burger-links{
         color: rgba(0, 0, 0, 0.6);
         font-size: calc(3vw + 3vh);
-        opacity: 0;
+        opacity: 1;
         text-align: center;
         font-family: medium;
         line-height: 1.5
