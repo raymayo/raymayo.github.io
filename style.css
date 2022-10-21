@@ -267,7 +267,8 @@ footer{
 
 
 #contactBg{
-    width: 100vw;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left:0;
@@ -286,6 +287,7 @@ footer{
     width: calc(30vw + 30vh);
     height: calc(18vw + 18vh);
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 #contactForm h1{
@@ -293,6 +295,7 @@ footer{
     font-size: calc(1.3vw + 1.3vh);
     margin: calc(1vw + 1vh);
     font-size: 40px;
+    text-align: center;
 }
 
 #contactForm i{
@@ -310,9 +313,10 @@ footer{
 
 
 form {
-    display: grid;
-    justify-items: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
     padding: 2em;
 }
 
@@ -736,6 +740,7 @@ footer a:hover span {
             resize: none;
             background-color: var(--white);
         }
+
         form button {
             font-family: medium;
             border: 1px solid var(--black);

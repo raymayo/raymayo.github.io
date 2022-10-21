@@ -157,10 +157,10 @@ closeContact.addEventListener('click', ()=> {
 })
 
 formBtn.addEventListener('mouseover', ()=> {
-  gsap.to('#formBtn', .8, { backgroundColor: 'black', color: '#EFEFEF', ease: Expo.easeOut})
+  gsap.to('#formBtn', .8, { backgroundColor: 'black', color: '#f5f5f5', ease: Expo.easeOut})
 })
 
 formBtn.addEventListener('mouseout', () => {
-  gsap.to('#formBtn', .8, { backgroundColor: '#EFEFEF', color: 'black', ease: Expo.easeOut })
+  gsap.to('#formBtn', .8, { backgroundColor: '#f5f5f5', color: 'black', ease: Expo.easeOut })
 });
 
