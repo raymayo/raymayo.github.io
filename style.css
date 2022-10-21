@@ -9,27 +9,32 @@
 @font-face {
     font-family: light;
     src: url(./font/WTGothic-Light.woff2);
+    font-display: auto;
 
 }
 
 @font-face {
     font-family: regular;
     src: url(./font/WTGothic-Regular.woff2);
+    font-display: auto;
 }
 
 @font-face {
     font-family: medium;
     src: url(./font/WTGothic-Medium.woff2);
+    font-display: auto;
 }
 
 @font-face {
     font-family: semibold;
     src: url(./font/WTGothic-Semi-Bold.woff2);
+    font-display: auto;
 }
 
 @font-face {
     font-family: bold;
     src: url(./font/WTGothic-Bold.woff2);
+    font-display: auto;
 }
 
 /* VARIABLES */
@@ -44,6 +49,20 @@
     --white: #EFEFEF;
     --black: #000000;
     
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1999;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
 }
 
 
@@ -126,15 +145,15 @@ display: flex;
 }
 
 #proj-01 .img-container {
-    background-image: url('./img/cluebox.png')
+    background-image: url('./img/cluebox.webp')
 }
 
 #proj-02 .img-container {
-    background-image: url('./img/uplifted.png')
+    background-image: url('./img/uplifted.webp')
 }
 
 #proj-03 .img-container {
-    background-image: url('./img/zenfi.png')
+    background-image: url('./img/zenfi.webp')
 }
 
 .img-container h1{
@@ -648,7 +667,8 @@ footer a:hover span {
 
 
         #contactBg {
-            width: 100vw;
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
@@ -665,7 +685,7 @@ footer a:hover span {
             border-radius: 3px;
             background-color: var(--white);
             width: 100%;
-            height: 56%;
+            height: 60%;
             position: relative;
         }
     
@@ -685,46 +705,37 @@ footer a:hover span {
     
     
         form {
-            display: grid;
-            justify-items: center;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+            /* justify-items: center;
+            align-items: center; */
             padding: 2em;
         }
-    
+        
     
         form input {
             width: 100%;
             padding: .5em 8px;
-            margin-bottom: calc(1.5vw + 1.5vh);
+            /* margin-bottom: calc(1.5vw + 1.5vh); */
             font-family: medium;
             font-size: 16px;
             border-radius: 3px;
             border: 1px solid var(--black);
             background-color: var(--white);
         }
-    
-        form input:focus {
-            border: 1px solid var(--black);
-            outline: none;
-        }
-    
         form textarea {
             width: 100%;
-            height: calc(15vw + 15vh);
+            height: 100%;
             padding: 8px;
-            margin-bottom: calc(1.5vw + 1.5vh);
+            /* margin-bottom: calc(1.5vw + 1.5vh); */
             border-radius: 3px;
             font-family: medium;
             font-size: 16px;
             resize: none;
             background-color: var(--white);
         }
-    
-        form textarea:focus {
-            border: 1px solid var(--black);
-            outline: none;
-        }
-    
         form button {
             font-family: medium;
             border: 1px solid var(--black);

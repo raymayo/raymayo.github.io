@@ -67,10 +67,10 @@ function activateNavItem(item) {
 }
 
 //PRELOADER
-// window.addEventListener('load', ()=>{
-//     const loader = document.querySelector('.loader');
-//     loader.className += ' hidden';
-// })
+window.addEventListener('load', ()=>{
+    // const loader = document.querySelector('.loader');
+    gsap.to(".loader", 0.5, {opacity:0, scale:2, ease: Expo.easeOut})
+})
 
 
 if (window.innerHeight > window.innerWidth) {
@@ -142,8 +142,8 @@ let closeContact = document.getElementById('closeContact');
 let formBtn = document.getElementById('formBtn');
 
 contactAnimation = gsap.timeline();
-contactAnimation.to('#contactBg', .6, { display: 'grid', backdropFilter: 'blur(50px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeInOut });
-contactAnimation.from('#contactForm', .8, { opacity: 0, scaleX: 2, scaleY: 2, ease: Expo.easeOut });
+contactAnimation.to('#contactBg', .4, { display: 'grid', backdropFilter: 'blur(50px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeInOut });
+contactAnimation.from('#contactForm', .6, { opacity: 0, scaleX: 2, scaleY: 2, ease: Expo.easeOut });
 contactAnimation.pause(0);
 
 
