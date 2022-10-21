@@ -69,7 +69,7 @@ function activateNavItem(item) {
 //PRELOADER
 window.addEventListener('load', ()=>{
     // const loader = document.querySelector('.loader');
-    gsap.to(".loader", 0.5, {opacity:0, scale:2, ease: Expo.easeOut})
+    gsap.to(".loader", 1, {opacity:0, scale:3, ease: Expo.easeInOut})
 })
 
 
