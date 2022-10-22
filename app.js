@@ -69,7 +69,7 @@ function activateNavItem(item) {
 //PRELOADER
 window.addEventListener('load', ()=>{
     // const loader = document.querySelector('.loader');
-    gsap.to(".loader", 1, {opacity:0, delay: 2, scale:0, ease: Expo.easeInOut})
+    gsap.to(".loader", 1, {opacity:0, scale:0, ease: Expo.easeInOut})
 
   if (window.innerHeight > window.innerWidth) {
 
@@ -103,7 +103,7 @@ window.addEventListener('load', ()=>{
     gsap.fromTo(".desc", 0.6, { delay: 0.8, opacity: 0, y: "100", ease: "expo.out" }, { delay: 0.8, opacity: 1, y: "0", ease: "expo.out" });
   }
 
-})
+}, 3000)
 
 
 
