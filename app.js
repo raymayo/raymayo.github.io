@@ -103,7 +103,7 @@ window.addEventListener('load', ()=>{
     gsap.fromTo(".desc", 0.6, { delay: 0.8, opacity: 0, y: "100", ease: "expo.out" }, { delay: 0.8, opacity: 1, y: "0", ease: "expo.out" });
   }
 
-}, 2500)
+})
 
 
 
