@@ -19,34 +19,34 @@ new fullpage("#fullpage", {
     });
 
     if (window.innerHeight > window.innerWidth) {
-      tl.from(".view-container", {delay: 1,opacity: 0,scale: 0, ease: "expo.out",});
-      // tl.from(".desc", { opacity: 0, x: "-100%", ease: "expo.out" }, "<");
+      tl.from(".view-container", {delay: 1,opacity: 0,scale: 0, ease: Expo.easeOut,});
+      // tl.from(".desc", { opacity: 0, x: "-100%", ease: Expo.easeOut }, "<");
     } else {
       tl.fromTo(
         ".reveal-left",
         0.6,
-        { delay: 0.6, opacity: 0, ease: "expo.out", x: "-100" },
-        { delay: 0.6, opacity: 1, ease: "expo.out", x: "0" }
+        { delay: 0.6, opacity: 0, ease: Expo.easeOut, x: "-100" },
+        { delay: 0.6, opacity: 1, ease: Expo.easeOut, x: "0" }
       );
       tl.fromTo(
         ".reveal-right",
         0.6,
-        { opacity: 0, ease: "expo.out", x: "100" },
-        { opacity: 1, ease: "expo.out", x: "0" },
+        { opacity: 0, ease: Expo.easeOut, x: "100" },
+        { opacity: 1, ease: Expo.easeOut, x: "0" },
         "<"
       );
       tl.fromTo(
         ".behance-circle",
         0.6,
-        { opacity: 0, ease: "expo.out", scaleX: 0, scaleY: 0 },
-        { opacity: 1, ease: "expo.out", scaleX: 1, scaleY: 1 },
+        { opacity: 0, ease: Expo.easeOut, scaleX: 0, scaleY: 0 },
+        { opacity: 1, ease: Expo.easeOut, scaleX: 1, scaleY: 1 },
         "<"
       );
       tl.fromTo(
         ".desc",
         0.6,
-        { opacity: 0, y: "100", ease: "expo.out" },
-        { opacity: 1, y: "0", ease: "expo.out" },
+        { opacity: 0, y: "100", ease: Expo.easeOut },
+        { opacity: 1, y: "0", ease: Expo.easeOut },
         "<"
       );
     }
@@ -75,9 +75,9 @@ window.addEventListener('load', ()=>{
 
     const portraitTimeline = gsap.timeline({ duration: 1 });
 
-    portraitTimeline.from(".img-container", { opacity: 0, scale: 0, ease: "expo.out" });
-    // portraitTimeline.from("footer", { x: "100%", ease: "expo.out" }, "<.2");
-    // portraitTimeline.from(".stag",{ opacity: 0, x: "100%", ease: "expo.out", stagger: 0.1 },"<");
+    portraitTimeline.from(".img-container", { opacity: 0, scale: 0, ease: Expo.easeOut });
+    portraitTimeline.from("nav", { opacity: 0, y: -100, ease: Expo.easeOut }, '<');
+    portraitTimeline.from("footer", { y: 100, ease: Expo.easeOut }, "<");
   } else {
 
     //PARALLAX EFFECT
@@ -94,13 +94,13 @@ window.addEventListener('load', ()=>{
 
       })
     }
-    gsap.from("nav", 0.6, { delay: 0.3, opacity: 0, y: "-100", ease: "expo.out", });
-    gsap.fromTo(".stag", 0.6, { delay: 0.35, opacity: 0, y: "100", ease: "expo.out" }, { delay: 0.35, opacity: 1, y: "0", ease: "expo.out" });
-    gsap.fromTo(".img-container", 0.6, { delay: 0.5, opacity: 0, ease: "expo.out", scaleX: 0, scaleY: 0 }, { delay: 0.55, opacity: 1, ease: "expo.out", scaleX: 1, scaleY: 1 });
-    gsap.fromTo(".left", 0.6, { delay: 0.7, opacity: 0, ease: "expo.out", x: "-100" }, { delay: 0.7, opacity: 1, ease: "expo.out", x: "0" });
-    gsap.fromTo(".right", 0.6, { delay: 0.7, opacity: 0, ease: "expo.out", x: "100" }, { delay: 0.7, opacity: 1, ease: "expo.out", x: "0" });
-    gsap.fromTo(".behance-circle", 0.6, { delay: 0.75, opacity: 0, ease: "expo.out", scaleX: 0, scaleY: 0 }, { delay: 0.75, opacity: 1, ease: "expo.out", scaleX: 1, scaleY: 1 });
-    gsap.fromTo(".desc", 0.6, { delay: 0.8, opacity: 0, y: "100", ease: "expo.out" }, { delay: 0.8, opacity: 1, y: "0", ease: "expo.out" });
+    gsap.from("nav", 0.6, { delay: 0.3, opacity: 0, y: "-100", ease: Expo.easeOut, });
+    gsap.fromTo(".stag", 0.6, { delay: 0.35, opacity: 0, y: "100", ease: Expo.easeOut }, { delay: 0.35, opacity: 1, y: "0", ease: Expo.easeOut });
+    gsap.fromTo(".img-container", 0.6, { delay: 0.5, opacity: 0, ease: Expo.easeOut, scaleX: 0, scaleY: 0 }, { delay: 0.55, opacity: 1, ease: Expo.easeOut, scaleX: 1, scaleY: 1 });
+    gsap.fromTo(".left", 0.6, { delay: 0.7, opacity: 0, ease: Expo.easeOut, x: "-100" }, { delay: 0.7, opacity: 1, ease: Expo.easeOut, x: "0" });
+    gsap.fromTo(".right", 0.6, { delay: 0.7, opacity: 0, ease: Expo.easeOut, x: "100" }, { delay: 0.7, opacity: 1, ease: Expo.easeOut, x: "0" });
+    gsap.fromTo(".behance-circle", 0.6, { delay: 0.75, opacity: 0, ease: Expo.easeOut, scaleX: 0, scaleY: 0 }, { delay: 0.75, opacity: 1, ease: Expo.easeOut, scaleX: 1, scaleY: 1 });
+    gsap.fromTo(".desc", 0.6, { delay: 0.8, opacity: 0, y: "100", ease: Expo.easeOut }, { delay: 0.8, opacity: 1, y: "0", ease: Expo.easeOut });
   }
 
 })

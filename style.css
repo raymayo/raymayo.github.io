@@ -40,12 +40,6 @@
 /* VARIABLES */
 :root {
     background-color: var(--white);
-    /* background-image: url(/img/back.png);
-    background-origin: border-box;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center -40%;
-    background-size: 100%; */
     --white: #f5f5f5;
     --black: #000000;
     
@@ -137,11 +131,9 @@ display: flex;
     background-position:center;
     width: calc(30vw + 30vh);
     height: calc(17vw + 17vh);
-    /* width: clamp(250px,75%,752px);
-    height: clamp(150px,50%,448px); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     cursor: default;
-    /* border-radius: 3px; */
+    border-radius: 3px;
 }
 
 #proj-01 .img-container {
@@ -180,7 +172,6 @@ display: flex;
     -webkit-text-stroke-width: calc(.06vw + .06vh);
    -webkit-text-stroke-color: var(--black);
     z-index: 1;
-    /* display: none; */
 }
 
 
@@ -232,9 +223,6 @@ h2{
     display: none;
 }
 
-/* .img-container > *{
-    opacity: 0;
-} */
 
 
 #contactBg{
@@ -267,15 +255,14 @@ footer{
 
 
 #contactBg{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
     left:0;
     background-color: rgba(0,0,0,0.3);
     backdrop-filter: blur(0px) saturate(100%);
     z-index: 500;
-    /* display: none; */
     display: none;
     align-items: center;
     justify-content: center;
@@ -284,40 +271,33 @@ footer{
 #contactForm{
     border-radius: 3px;
     background-color: var(--white);
-    width: calc(30vw + 30vh);
-    height: calc(18vw + 18vh);
+    width: 55vw;
+    height: 60vh;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 #contactForm h1{
     font-family: bold;
-    font-size: calc(1.3vw + 1.3vh);
-    margin: calc(1vw + 1vh);
-    font-size: 40px;
+    margin: 4vh;
+    font-size: 24px;
     text-align: center;
 }
 
 #contactForm i{
-    font-size: calc(.8vw + .8vh);
+    font-size: calc(1.3vw + 1.3vh);
     position: absolute;
     top: 20px;
     right: 25px;
     cursor: pointer;
 }
 
-/* form > * {
-    border: solid 1px magenta;
-} */
-
-
-
 form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
-    padding: 2em;
+    padding: 0 1.5em 1.5em 1.5em;
 }
 
 
@@ -339,7 +319,7 @@ form input:focus{
 
 form textarea{
     width: 100%;
-    height: calc(6vw + 6vh);
+    height: 100%;
     padding: 8px;
     margin-bottom: calc(1vw + 1vh);
     border-radius: 3px;
@@ -347,6 +327,7 @@ form textarea{
     font-size: 20px;
     resize: none;
     background-color: var(--white);
+    border: 1px solid var(--black);
 }
 
 form textarea:focus {
@@ -360,7 +341,6 @@ form button{
     font-size: 20px;
     width: 100%;
     padding: .6em 0;
-    /* height: calc(1.5vw + 1.5vh); */
     background-color: var(--white);
     color: var(--black);
     border-radius: 3px;
@@ -439,7 +419,6 @@ form button{
 
 #nav-links a::before {
     content: '';
-    /* show by default */
 }
 
 #nav-links a:hover span {
@@ -494,7 +473,6 @@ footer a::after {
 
 footer a::before {
     content: '';
-    /* show by default */
 }
 
 footer a:hover span {
@@ -507,7 +485,6 @@ footer a:hover span {
 
     body{
         width: auto;
-        /* height: auto; */
         height: calc(var(--vh, 1vh) * 100);
         position: relative;
     } 
@@ -527,15 +504,15 @@ footer a:hover span {
     }
 
     #logo-box a{
-        font-size: calc(1.5vw + 1.5vh);
+        font-size: calc(1.3vw + 1.3vh);
         width: 50%;
     }
 
 
     .img-container{
-        margin-top: 10vh;
-        height: calc(35vw + 35vh);
-        width:80vw;       
+        margin-top: 5vh;
+        height:55%;
+        width:80%;       
         border-radius: 8px;
     }
 
@@ -556,8 +533,6 @@ footer a:hover span {
     justify-content: space-between;
     align-items: center;
     padding: 5% 10%;
-    /* backdrop-filter: blur(10px) saturate(100%); */
-    /* border: solid 1px red; */
     }
 
     footer i{
@@ -565,10 +540,8 @@ footer a:hover span {
     }
     
     footer a{
-        font-size: calc(1.5vw + 1.5vh);
+        font-size: calc(1.2vw + 1.2vh);
         font-family: regular;
-        /* writing-mode: vertical-rl;
-        text-transform: uppercase; */
     }
 
     
@@ -600,7 +573,6 @@ footer a:hover span {
         justify-content: center;
         justify-items: center;
         align-items: center;
-        /* background-color: rgba(0,0,0,0.3); */
         backdrop-filter: blur(0) saturate(100%);
     }
 
@@ -679,7 +651,6 @@ footer a:hover span {
             background-color: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(0px) saturate(100%);
             z-index: 500;
-            /* display: none; */
             display: none;
             align-items: center;
             justify-content: center;
@@ -713,8 +684,6 @@ footer a:hover span {
             flex-direction: column;
             justify-content: flex-start;
             height: 100%;
-            /* justify-items: center;
-            align-items: center; */
             padding: 2em;
         }
         
@@ -722,7 +691,6 @@ footer a:hover span {
         form input {
             width: 100%;
             padding: .5em 8px;
-            /* margin-bottom: calc(1.5vw + 1.5vh); */
             font-family: medium;
             font-size: 16px;
             border-radius: 3px;
@@ -733,12 +701,12 @@ footer a:hover span {
             width: 100%;
             height: 100%;
             padding: 8px;
-            /* margin-bottom: calc(1.5vw + 1.5vh); */
             border-radius: 3px;
             font-family: medium;
             font-size: 16px;
             resize: none;
             background-color: var(--white);
+            border: 1px solid black;
         }
 
         form button {
@@ -747,7 +715,6 @@ footer a:hover span {
             font-size: 16px;
             width: 100%;
             padding: .5em 0;
-            /* height: calc(1.5vw + 1.5vh); */
             background-color: var(--white);
             color: var(--black);
             border-radius: 3px;
