@@ -164,3 +164,15 @@ formBtn.addEventListener('mouseout', () => {
   gsap.to('#formBtn', .8, { backgroundColor: '#f5f5f5', color: 'black', ease: Expo.easeOut })
 });
 
+const date = new Date();
+
+let year = date.getFullYear();
+
+console.log(year)
+
+let copyrightYear = document.querySelector('#copyright-year');
+
+copyrightYear.textContent = `©${year} Ray Mayo`
+
+console.log(copyrightYear.textContent);
+
