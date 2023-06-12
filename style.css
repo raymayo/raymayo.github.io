@@ -148,6 +148,14 @@ display: flex;
     background-image: url('./img/zenfi.webp')
 }
 
+#proj-04 .img-container {
+    background-image: url('https://images.unsplash.com/photo-1510070009289-b5bc34383727?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')
+}
+
+#proj-05 .img-container {
+    background-image: url('https://images.unsplash.com/photo-1510070009289-b5bc34383727?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')
+}
+
 .img-container h1{
         position:absolute;
         font-family: bold;
