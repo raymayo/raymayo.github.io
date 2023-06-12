@@ -113,7 +113,7 @@ var i = "OFF";
 
 const menu = gsap.timeline();
 
-menu.to("#burger-box", {display: "grid",backdropFilter: "blur(50px)",ease: Expo.easeOut,});
+menu.to("#burger-box", {display: "grid",backdropFilter: "blur(25px)",ease: Expo.easeOut,});
 menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");
 menu.from(".burger-links",{ opacity: 0, y:50, ease: Expo.easeOut, stagger: 0.1 },"<");
 
