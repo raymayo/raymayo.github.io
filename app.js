@@ -172,7 +172,7 @@ console.log(year)
 
 let copyrightYear = document.querySelector('#copyright-year');
 
-copyrightYear.textContent = `©${year} Ray Mayo`
+copyrightYear.textContent = `©${year} Duexmille Atalier`
 
 console.log(copyrightYear.textContent);
 
