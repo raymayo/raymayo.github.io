@@ -143,8 +143,8 @@ let closeContact = document.getElementById('closeContact');
 let formBtn = document.getElementById('formBtn');
 
 contactAnimation = gsap.timeline();
-contactAnimation.to('#contactBg', .4, { display: 'grid', backdropFilter: 'blur(5px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeInOut });
-contactAnimation.from('#contactForm', .6, { opacity: 0, scaleX: 2, scaleY: 2, ease: Expo.easeOut });
+contactAnimation.to('#contactBg', { display: 'grid', backdropFilter: 'blur(15px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeOut });
+contactAnimation.from('#contactForm', { opacity: 0, scale:0, ease: Expo.easeOut },'<.15');
 contactAnimation.pause(0);
 
 
@@ -157,11 +157,11 @@ closeContact.addEventListener('click', ()=> {
 })
 
 formBtn.addEventListener('mouseover', ()=> {
-  gsap.to('#formBtn', .8, { backgroundColor: 'black', color: '#f5f5f5', ease: Expo.easeOut})
+  gsap.to('#formBtn', .8, { backgroundColor: 'rgba(0,0,0,.4)', color: '#f5f5f5', ease: Expo.easeOut})
 })
 
 formBtn.addEventListener('mouseout', () => {
-  gsap.to('#formBtn', .8, { backgroundColor: '#f5f5f5', color: 'black', ease: Expo.easeOut })
+  gsap.to('#formBtn', .8, { backgroundColor: 'rgba(0,0,0,.7)', color: '#f5f5f5', ease: Expo.easeOut })
 });
 
 const date = new Date();
