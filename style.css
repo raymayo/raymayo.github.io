@@ -488,6 +488,40 @@ footer a:hover span {
 }
 
 
+#proj-01 h1{
+color: rgba(105,51,210,.8);
+-webkit-text-stroke-color: rgba(105,51,210,1);
+}
+
+#proj-01 .behance-circle, #proj-01 a{
+    border-color: rgba(105,51,210,1);
+    color: rgba(105,51,210,1);
+}
+
+#proj-02 h1{
+    color: rgba(52,47,252,.8);
+    -webkit-text-stroke-color: #342ffc;
+    }
+
+
+#proj-02 .behance-circle, #proj-02 a{
+    border-color: #342ffc;
+    color: white;
+    background-color: rgba(52,47,252,.5);
+}
+
+    #proj-03 h1{
+        color: rgba(148,142,209,.8);
+        -webkit-text-stroke-color: #948ed1;
+        }
+    
+
+        #proj-03 .behance-circle, #proj-03 a{
+            border-color: #948ed1;
+            color: #948ed1;
+        }
+
+
 
 @media screen and (orientation:portrait){
 
