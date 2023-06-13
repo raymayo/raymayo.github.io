@@ -113,7 +113,7 @@ var i = "OFF";
 
 const menu = gsap.timeline();
 
-menu.to("#burger-box", {display: "grid",backdropFilter: "blur(25px)",ease: Expo.easeOut,});
+menu.to("#burger-box", {display: "grid",backdropFilter: "blur(20px)",ease: Expo.easeOut,});
 menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");
 menu.from(".burger-links",{ opacity: 0, y:50, ease: Expo.easeOut, stagger: 0.1 },"<");
 
@@ -143,7 +143,7 @@ let closeContact = document.getElementById('closeContact');
 let formBtn = document.getElementById('formBtn');
 
 contactAnimation = gsap.timeline();
-contactAnimation.to('#contactBg', .4, { display: 'grid', backdropFilter: 'blur(50px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeInOut });
+contactAnimation.to('#contactBg', .4, { display: 'grid', backdropFilter: 'blur(5px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeInOut });
 contactAnimation.from('#contactForm', .6, { opacity: 0, scaleX: 2, scaleY: 2, ease: Expo.easeOut });
 contactAnimation.pause(0);
 
