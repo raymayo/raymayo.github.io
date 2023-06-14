@@ -169,6 +169,7 @@ display: flex;
     color: rgba(0,0,0,.2);
     -webkit-text-stroke-width: calc(.06vw + .06vh);
     -webkit-text-stroke-color: var(--black);
+    filter: grayscale(100%);
 }
 
 
@@ -209,7 +210,6 @@ display: flex;
     font-size: calc(.8vw + .8vh);
     color: var(--black);
     background-color: rgba(0,0,0,.2);
-    filter: grayscale(100%);
 }
 
 
@@ -238,7 +238,7 @@ h2{
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color: #000000;
+    background-color: transparent;
 }
 
 
@@ -278,11 +278,12 @@ footer{
 }
 
 #contactForm{
-    border-radius: 3px;
-    background-color: rgba(0,0,0,.5);
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.6);
     width: 55vw;
     height: 60vh;
     position: relative;
+    border: solid 2px #454545;
 }
 
 #contactForm h1{
@@ -290,7 +291,7 @@ footer{
     margin: 4vh;
     font-size: 24px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--black)
 }
 
 #contactForm i{
@@ -299,7 +300,7 @@ footer{
     top: 20px;
     right: 25px;
     cursor: pointer;
-    color: rgba(0,0,0,.5);
+    color: var(--black)
 }
 
 form {
@@ -317,14 +318,15 @@ form input{
     margin-bottom: calc(1vw + 1vh);
     font-family: medium;
     font-size: 20px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: none;
     background-color: rgba(0, 0, 0, 0.5);
     color: var(--white);
+    border: solid 2px #000000;
 }
 
 form input:focus{
-    border: 1px solid var(--black);
+    background-color: rgba(0, 0, 0, 0.5);
     outline: none;
 }
 
@@ -338,12 +340,12 @@ form textarea{
     font-size: 20px;
     resize: none;
     background-color: rgba(0, 0, 0, 0.5);
-    border: none;
+    border: solid 2px #212121;
     color: var(--white);
 }
 
 form textarea:focus {
-    border: 1px solid var(--black);
+    background-color: rgba(0, 0, 0, 0.5);
     outline: none;
 }
 
@@ -353,8 +355,9 @@ form button{
     font-size: 20px;
     width: 100%;
     padding: .6em 0;
-    background-color: rgba(0,0,0,.5);
-    color: var(--white);
+    background-color: transparent;
+    border: solid 2px #212121;
+    color: var(--black);
     border-radius: 3px;
     cursor: pointer;
 }
@@ -663,8 +666,8 @@ color: rgba(105,51,210,.8);
     }
 
     .desc{
-        box-shadow: rgba(239, 236, 236, 0.2) 0px -4px 6px -1px,rgba(0, 0, 0, 0.16) 0px -2px 4px -1px;
-        background-color: rgba(0,0,0,0.3);
+        /* box-shadow: rgba(239, 236, 236, 0.2) 0px -4px 6px -1px,rgba(0, 0, 0, 0.16) 0px -2px 4px -1px; */
+        background-color: rgba(0,0,0,0.8);
         backdrop-filter: blur(5px) saturate(100%);
         font-family: light;
         color: var(--white);
@@ -717,13 +720,14 @@ color: rgba(105,51,210,.8);
             background-color: rgba(0,0,0,.5);
             height: 50%;
             position: relative;
+            height: 60%;
+            width: 80vw;
         }
     
         #contactForm h1 {
             font-family: regular;
             margin-bottom: calc(2vw + 2vh);
             font-size: 20px;
-            color: rgba(255, 255, 255, 0.7);
         }
     
         #contactForm i {
@@ -732,7 +736,6 @@ color: rgba(105,51,210,.8);
             top: 20px;
             right: 25px;
             cursor: pointer;
-            color: rgba(0,0,0,.5);
         }
     
     
@@ -770,12 +773,9 @@ color: rgba(105,51,210,.8);
 
         form button {
             font-family: medium;
-            border: none;
             font-size: 16px;
             width: 100%;
             padding: .5em 0;
-            background-color: rgba(0,0,0,.5);
-            color: var(--white);
             border-radius: 3px;
             cursor: pointer;
         }
