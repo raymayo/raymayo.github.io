@@ -166,7 +166,7 @@ display: flex;
 .img-container h1:nth-child(1){
     top: -4vw;
     right:15vw;
-    color: transparent;
+    color: rgba(0,0,0,.2);
     -webkit-text-stroke-width: calc(.06vw + .06vh);
     -webkit-text-stroke-color: var(--black);
 }
@@ -175,7 +175,7 @@ display: flex;
 .img-container h1:nth-child(2){
     bottom: -2vw;
     right: -13vw;
-    color: transparent;
+    color: rgba(0,0,0,.2);
     -webkit-text-stroke-width: calc(.06vw + .06vh);
    -webkit-text-stroke-color: var(--black);
     z-index: 1;
@@ -208,6 +208,8 @@ display: flex;
 .behance-circle a{
     font-size: calc(.8vw + .8vh);
     color: var(--black);
+    background-color: rgba(0,0,0,.2);
+    filter: grayscale(100%);
 }
 
 
@@ -490,15 +492,24 @@ footer a:hover span {
 }
 
 
-#proj-01 h1{
+/* #proj-01 h1{
 color: rgba(105,51,210,.8);
 -webkit-text-stroke-color: rgba(105,51,210,1);
 }
+
+#proj-01 h1{
+    color: rgba(0,0,0,.2);
+    -webkit-text-stroke-color: #000000;
+    }
 
 #proj-01 .behance-circle, #proj-01 a{
     border-color: rgba(105,51,210,1);
     color: white;
     background-color: rgba(105,51,210,.5);
+}
+
+#proj-01 .behance-circle{
+    background-color: rgba(0,0,0,.2);
 }
 
 #proj-02 h1{
@@ -522,7 +533,7 @@ color: rgba(105,51,210,.8);
         #proj-03 .behance-circle, #proj-03 a{
             border-color: #948ed1;
             color: #948ed1;
-        }
+        } */
 
 
 
