@@ -782,8 +782,8 @@ color: rgba(105,51,210,.8);
             cursor: pointer;
         }
 
-        #proj-01 b, #proj-01 span{
-            color: #8843ee;
+        #proj-01 b {
+            color: #9355ef;
         }
 
         #proj-02 b{
@@ -792,7 +792,7 @@ color: rgba(105,51,210,.8);
         }
 
         #proj-03 b{
-            color: #8177dc
+            color: #948ed1
 
         }
     
