@@ -143,7 +143,7 @@ let closeContact = document.getElementById('closeContact');
 let formBtn = document.getElementById('formBtn');
 
 contactAnimation = gsap.timeline();
-contactAnimation.to('#contactBg', { display: 'grid', backdropFilter: 'blur(15px)', backgroundColor: 'rgba(0, 0, 0, 0.0)', ease: Expo.easeOut });
+contactAnimation.to('#contactBg', { display: 'grid', backdropFilter: 'blur(15px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeOut });
 contactAnimation.from('#contactForm', { opacity: 0, scale:0, ease: Expo.easeOut },'<.1.5');
 contactAnimation.pause(0);
 
