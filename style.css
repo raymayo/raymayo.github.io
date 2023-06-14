@@ -279,7 +279,7 @@ footer{
 
 #contactForm{
     border-radius: 5px;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(255, 255, 255, .8);
     width: 55vw;
     height: 60vh;
     position: relative;
@@ -320,13 +320,12 @@ form input{
     font-size: 20px;
     border-radius: 5px;
     border: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: var(--white);
+    background-color: transparent;
+    color: var(--black);
     border: solid 2px #000000;
 }
 
 form input:focus{
-    background-color: rgba(0, 0, 0, 0.5);
     outline: none;
 }
 
@@ -339,13 +338,13 @@ form textarea{
     font-family: medium;
     font-size: 20px;
     resize: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: solid 2px #212121;
-    color: var(--white);
+    background-color: transparent;
+    border: solid 2px #000000;
+    color: var(--black);
 }
 
 form textarea:focus {
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     outline: none;
 }
 
@@ -356,10 +355,21 @@ form button{
     width: 100%;
     padding: .6em 0;
     background-color: transparent;
-    border: solid 2px #212121;
+    border: solid 2px #000000;
     color: var(--black);
     border-radius: 3px;
     cursor: pointer;
+}
+
+::placeholder {
+    color: #555555;
+  }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 
@@ -642,7 +652,7 @@ color: rgba(105,51,210,.8);
     
 
     .burger-links{
-        color: rgba(0, 0, 0, 0.6);
+        color: rgba(0, 0, 0, 0.8);
         font-size: calc(3vw + 3vh);
         opacity: 1;
         text-align: center;
@@ -716,11 +726,9 @@ color: rgba(105,51,210,.8);
         }
     
         #contactForm {
-            border-radius: 3px;
-            background-color: rgba(0,0,0,.5);
-            height: 50%;
+            border-radius: 5px;
             position: relative;
-            height: 60%;
+            height: 50%;
             width: 80vw;
         }
     
@@ -744,7 +752,7 @@ color: rgba(105,51,210,.8);
             flex-direction: column;
             justify-content: flex-start;
             height: 100%;
-            padding: 2em;
+            padding: 0 2em 2em 2em;
         }
         
     
@@ -754,9 +762,6 @@ color: rgba(105,51,210,.8);
             font-family: medium;
             font-size: 16px;
             border-radius: 3px;
-            border: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: var(--white);
         }
         form textarea {
             width: 100%;
@@ -766,9 +771,6 @@ color: rgba(105,51,210,.8);
             font-family: medium;
             font-size: 16px;
             resize: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: var(--white);
         }
 
         form button {
