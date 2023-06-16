@@ -166,7 +166,7 @@ display: flex;
 .img-container h1:nth-child(1){
     top: -4vw;
     right:15vw;
-    color: rgba(0,0,0,.2);
+    color: rgba(0,0,0,.1);
     -webkit-text-stroke-width: calc(.06vw + .06vh);
     -webkit-text-stroke-color: var(--black);
     filter: grayscale(100%);
@@ -176,7 +176,7 @@ display: flex;
 .img-container h1:nth-child(2){
     bottom: -2vw;
     right: -13vw;
-    color: rgba(0,0,0,.2);
+    color: rgba(0,0,0,.1);
     -webkit-text-stroke-width: calc(.06vw + .06vh);
    -webkit-text-stroke-color: var(--black);
     z-index: 1;
