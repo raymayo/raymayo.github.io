@@ -148,7 +148,7 @@ display: flex;
 }
 
 #proj-04 .img-container {
-    background-image: url('https://images.unsplash.com/photo-1510070009289-b5bc34383727?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')
+    background-image: url('./img/wisepaper.webp')
 }
 
 #proj-05 .img-container {
@@ -793,6 +793,10 @@ color: rgba(105,51,210,.8);
 
         #proj-03 b{
             color: #948ed1
+
+        }
+        #proj-04 b{
+            color: #4956ff
 
         }
     
