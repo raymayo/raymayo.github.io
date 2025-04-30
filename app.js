@@ -2,60 +2,39 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 
 new fullpage("#fullpage", {
-  //options here
   autoScrolling: true,
   scrollHorizontally: false,
 
   onLeave: function (origin, destination, direction) {
     activateNavItem($("#icons").find("li").eq(destination.index));
 
-    let tl = new TimelineMax({
-      onStart: function () {
-        fullpage_api.setAllowScrolling(false);
-      },
-      onComplete: function () {
-        fullpage_api.setAllowScrolling(true);
-      },
+    const section = destination.item; // the incoming section
+    const tl = gsap.timeline({
+      defaults: { duration: 0.6, ease: "expo.out" },
+      onStart: () => fullpage_api.setAllowScrolling(false),
+      onComplete: () => fullpage_api.setAllowScrolling(true),
     });
 
     if (window.innerHeight > window.innerWidth) {
-      tl.from(".view-container", {delay: 1,opacity: 0,scale: 0, ease: Expo.easeOut,});
-      // tl.from(".desc", { opacity: 0, x: "-100%", ease: Expo.easeOut }, "<");
+      tl.from(section.querySelector(".view-container"), {
+        opacity: 0,
+        scale: 0,
+        duration: 1,
+      });
     } else {
-      tl.fromTo(
-        ".reveal-left",
-        0.6,
-        { delay: 0.6, opacity: 0, ease: Expo.easeOut, x: "-100" },
-        { delay: 0.6, opacity: 1, ease: Expo.easeOut, x: "0" }
-      );
-      tl.fromTo(
-        ".reveal-right",
-        0.6,
-        { opacity: 0, ease: Expo.easeOut, x: "100" },
-        { opacity: 1, ease: Expo.easeOut, x: "0" },
-        "<"
-      );
-      tl.fromTo(
-        ".behance-circle",
-        0.6,
-        { opacity: 0, ease: Expo.easeOut, scaleX: 0, scaleY: 0 },
-        { opacity: 1, ease: Expo.easeOut, scaleX: 1, scaleY: 1 },
-        "<"
-      );
-      tl.fromTo(
-        ".desc",
-        0.6,
-        { opacity: 0, y: "100", ease: Expo.easeOut },
-        { opacity: 1, y: "0", ease: Expo.easeOut },
-        "<"
-      );
+      tl.from(section.querySelectorAll(".reveal-lefty"), { opacity: 0, x: -100 }, 0.6)
+        .from(section.querySelectorAll(".reveal-righty"), { opacity: 0, x: 100 }, "<")
+        .from(section.querySelector(".behance-circle"), { opacity: 0, scale: 0 }, "<")
+        .from(section.querySelector(".desc"), { opacity: 0, y: 100 }, "<");
     }
   },
 
-  afterRender: function (origin, destination, direction) {
+
+  afterRender: function () {
     activateNavItem($("#icons").find("li").eq($(".section.active").index()));
   },
 });
+
 
 $(".navIcon").click(function () {
   var destination = $(this).closest("li");
@@ -67,43 +46,63 @@ function activateNavItem(item) {
 }
 
 //PRELOADER
-window.addEventListener('load', ()=>{
-    // const loader = document.querySelector('.loader');
-    gsap.to(".loader", 1, {opacity:0, scale:0, ease: Expo.easeInOut})
+window.addEventListener('load', () => {
+  gsap.to(".loader", 1, { opacity: 0, scale: 0, ease: Expo.easeInOut });
+
+  // Capture mouse position before animation starts
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+
+  // Fallback if no mousemove has occurred yet
+  document.addEventListener("mousemove", e => {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+  }, { once: true }); // Only run once initially
 
   if (window.innerHeight > window.innerWidth) {
-
     const portraitTimeline = gsap.timeline({ duration: 1 });
 
     portraitTimeline.from(".img-container", { opacity: 0, scale: 0, ease: Expo.easeOut });
     portraitTimeline.from("nav", { opacity: 0, y: -100, ease: Expo.easeOut }, '<');
     portraitTimeline.from("footer", { y: 100, ease: Expo.easeOut }, "<");
   } else {
+    // Apply initial parallax offset based on mouse position
+    document.querySelectorAll('.layer').forEach(layer => {
+      const speed = layer.getAttribute('data-speed');
+      const x = (window.innerWidth - mouseX * speed) / 100;
+      const y = (window.innerHeight - mouseY * speed) / 100;
+      layer.style.translate = `${x}px ${y}px`;
+    });
 
-    //PARALLAX EFFECT
-    document.addEventListener("mousemove", parallax);
-
-    function parallax(e) {
-      this.querySelectorAll('.layer').forEach(layer => {
-
+    // Parallax on move
+    document.addEventListener("mousemove", function parallax(e) {
+      document.querySelectorAll('.layer').forEach(layer => {
         const speed = layer.getAttribute('data-speed');
-        const x = (window.innerWidth - e.pageX * speed) / 100
-        const y = (window.innerHeight - e.pageY * speed) / 100
-
+        const x = (window.innerWidth - e.pageX * speed) / 100;
+        const y = (window.innerHeight - e.pageY * speed) / 100;
         layer.style.translate = `${x}px ${y}px`;
+      });
+    });
 
-      })
-    }
-    gsap.from("nav", 0.6, { delay: 0.3, opacity: 0, y: "-100", ease: Expo.easeOut, });
-    gsap.fromTo(".stag", 0.6, { delay: 0.35, opacity: 0, y: "100", ease: Expo.easeOut }, { delay: 0.35, opacity: 1, y: "0", ease: Expo.easeOut });
-    gsap.fromTo(".img-container", 0.6, { delay: 0.5, opacity: 0, ease: Expo.easeOut, scaleX: 0, scaleY: 0 }, { delay: 0.55, opacity: 1, ease: Expo.easeOut, scaleX: 1, scaleY: 1 });
-    gsap.fromTo(".left", 0.6, { delay: 0.7, opacity: 0, ease: Expo.easeOut, x: "-100" }, { delay: 0.7, opacity: 1, ease: Expo.easeOut, x: "0" });
-    gsap.fromTo(".right", 0.6, { delay: 0.7, opacity: 0, ease: Expo.easeOut, x: "100" }, { delay: 0.7, opacity: 1, ease: Expo.easeOut, x: "0" });
-    gsap.fromTo(".behance-circle", 0.6, { delay: 0.75, opacity: 0, ease: Expo.easeOut, scaleX: 0, scaleY: 0 }, { delay: 0.75, opacity: 1, ease: Expo.easeOut, scaleX: 1, scaleY: 1 });
-    gsap.fromTo(".desc", 0.6, { delay: 0.8, opacity: 0, y: "100", ease: Expo.easeOut }, { delay: 0.8, opacity: 1, y: "0", ease: Expo.easeOut });
+    // Staggered animations
+    const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "Expo.easeOut" } });
+
+    tl.from("nav", { opacity: 0, y: -100 }, 0.3)
+      .from(".stag", { opacity: 0, y: 100 }, 0.35)
+      .from(".img-container", { opacity: 0, scaleX: 0, scaleY: 0 }, 0.55)
+      .from(".left", { opacity: 0, x: -100 }, 0.7)
+      .from(".right", { opacity: 0, x: 100 }, 0.7)
+      .from(".behance-circle", { opacity: 0, scaleX: 0, scaleY: 0 }, 0.75)
+      .from(".desc", { opacity: 0, y: 100 }, 0.8);
+
   }
+});
 
-})
+
+
+
+
+
 
 
 
@@ -113,9 +112,9 @@ var i = "OFF";
 
 const menu = gsap.timeline();
 
-menu.to("#burger-box", {display: "grid",backdropFilter: "blur(20px)",ease: Expo.easeOut,});
+menu.to("#burger-box", { display: "grid", backdropFilter: "blur(20px)", ease: Expo.easeOut, });
 menu.to(".burg-link-box", { display: "grid", ease: Expo.easeOut }, "<");
-menu.from(".burger-links",{ opacity: 0, y:50, ease: Expo.easeOut, stagger: 0.1 },"<");
+menu.from(".burger-links", { opacity: 0, y: 50, ease: Expo.easeOut, stagger: 0.1 }, "<");
 
 menu.pause(0);
 
@@ -144,20 +143,20 @@ let formBtn = document.getElementById('formBtn');
 
 contactAnimation = gsap.timeline();
 contactAnimation.to('#contactBg', { display: 'grid', backdropFilter: 'blur(15px)', backgroundColor: 'rgba(0, 0, 0, 0.3)', ease: Expo.easeOut });
-contactAnimation.from('#contactForm', { opacity: 0, scale:0, ease: Expo.easeOut },'<.1.5');
+contactAnimation.from('#contactForm', { opacity: 0, scale: 0, ease: Expo.easeOut }, '<.1.5');
 contactAnimation.pause(0);
 
 
-contactBtn.addEventListener('click', ()=> {
+contactBtn.addEventListener('click', () => {
   contactAnimation.play();
 })
 
-closeContact.addEventListener('click', ()=> {
+closeContact.addEventListener('click', () => {
   contactAnimation.reverse(0);
 })
 
-formBtn.addEventListener('mouseover', ()=> {
-  gsap.to('#formBtn', .8, { backgroundColor: 'rgba(0,0,0,1)', border: 'solid 2px #212121', color: '#f4f4f4', ease: Expo.easeOut})
+formBtn.addEventListener('mouseover', () => {
+  gsap.to('#formBtn', .8, { backgroundColor: 'rgba(0,0,0,1)', border: 'solid 2px #212121', color: '#f4f4f4', ease: Expo.easeOut })
 })
 
 formBtn.addEventListener('mouseout', () => {
@@ -172,7 +171,7 @@ console.log(year)
 
 let copyrightYear = document.querySelector('#copyright-year');
 
-copyrightYear.textContent = `©${year} Novu Atelier`
+copyrightYear.textContent = `© ${year} Novu Atelier`
 
 console.log(copyrightYear.textContent);
 
